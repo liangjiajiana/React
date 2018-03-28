@@ -1,0 +1,62 @@
+#ccjzhifu{height: 100%;display:flex;flex-direction:column;
+    #ccjheader{height: 1.15rem;display:flex;justify-content:flex-start;border-bottom:1px solid #ccc;
+    }
+    .fanhui{
+             display:inline-block;width: 1.3rem;height: 1.15rem;text-align: center;font-size: 0.862rem;line-height: 1.15rem;
+        }
+    .center{
+            width: 7.61333rem;height: 1.15rem;text-align: center;line-height:1.15rem;font-size: 0.512rem;
+    }
+    #ccjmian{
+        flex:1;background-color: #F6F6F6;
+        .time{
+            height: 1.886667rem;background-color: #FFF5EE;padding-top: 0.482667rem;
+            >p{
+                height: 0.461333rem;text-align: center;color:#999;font-size: 0.312rem;
+            }
+            .remainingtime{
+                height: 0.461333rem;margin-top: 0.213333rem;text-align: center;color:#FF8F40;font-size: 0.44rem
+            }
+        }
+        .zhifufangshi{
+                height: 6.666667rem;padding:0 0.44rem;background:#fff;
+                ul{
+                    height: 100%;
+                    li{
+                        height: 1.34444rem;border-bottom:0.011333rem solid
+                        #ECECFB;display:flex;justify-content:space-between;
+                        font-size: 0.412rem;line-height: 1.34444rem;
+                        
+                        .right{
+                            >span{
+                                display:block;width: 0.54rem;height: 0.54rem;
+                                color:#999;line-height: 0.54rem;font-size: 0.412rem;display:flex;justify-content:flex-start;margin-top: 0.433333rem;
+                            }
+                            .active{
+                                color: #FF7919;
+                            }
+                        }
+                        div{display:flex;justify-content:flex-start;
+                            >span{
+                                line-height: 1.34444rem;margin-right: 0.163333rem;
+                                font-size: 0.612rem;
+                            }
+                            .bao{color:#39A1F9;}
+                            .baidu{color:#F92521;}
+                            .yin{color:#7EB3B1;}
+                        }
+                    }
+                }
+            }
+    }
+    #ccjfooter{height: 1.48rem;
+        div{
+            height: 100%;text-align: center;line-height: 1.48rem;font-size:0.412rem;
+            color:#FFF;background-color: #FF7919;
+            text-align: center;
+        }
+        
+        
+    }
+
+}

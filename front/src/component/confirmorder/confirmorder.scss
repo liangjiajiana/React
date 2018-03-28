@@ -1,0 +1,134 @@
+
+#ccjdingdan{height: 100%;display:flex;flex-direction:column;
+    #ccjheader{height: 1.15rem;display:flex;justify-content:flex-start;border-bottom:1px solid #ccc;
+    }
+    .fanhui{
+             display:inline-block;width: 1.3rem;height: 1.15rem;text-align: center;font-size: 0.862rem;line-height: 1.15rem;
+        }
+    .center{
+            width: 7.61333rem;height: 1.15rem;text-align: center;line-height:1.15rem;font-size: 0.512rem;
+    }
+    
+    #ccjmain{flex:1;overflow-x:hidden;
+        .tushuneirong{
+            height: 4.80rem;
+            .tushuneirongs{
+                margin: 0 0.48rem;height: 100%;
+                .tushutop{
+                    height: 3.57333rem;padding-top: 0.40rem;display:flex;justify-content:flex-start;border-bottom:1px solid #ccc;
+                    img{width: 1.95rem;height: 2.566667rem;}
+                    .name{height: 2.566667rem;width: 6.837333rem;margin-left: 0.426667rem;
+                        .tushuname{font-size: 0.426667rem;}
+                        p{height: 0.682667rem;line-height:0.682667rem;color:#ccc;}
+                    }
+                }
+                .tushubuttom{
+                    height: 1.333333rem;display:flex;justify-content:space-between;
+                    .piaoshu{
+                        display:inline-block;width: 2.304rem;height: 100%;
+                        font-size: 0.386667rem;line-height: 1.333333rem;text-align: center;color:#898989;
+                    }
+                    .zongjia{
+                        width: 2.346667rem;height: 100%;text-align: center;line-height: 1.33rem;font-size: 0.386667rem;
+                        span{color:#FF9143;}
+                        i{margin-left: 0.106667rem;font-size: 0.512rem;color:#B5B5B5}
+                    }
+                }
+            }
+        }
+        .huodong{
+            height: 1.550667rem;background-color: #F0F0F0;background-color: #F0F0F0;padding-top: 0.183333rem;
+            .huodongmain{
+                height: 1.2rem;background-color: #FFF;display:flex;justify-content:space-between;padding: 0 0.482667rem;
+                .huodongleft{width: 2.56rem;height: 100%;line-height:1.2rem;font-size: 0.406667rem;color:#333333;}
+                .huodongright{
+                    width: 3.26rem;height: 100%;line-height: 1.2rem;color:#999999;
+                }
+            }
+        }
+        .peisong{min-height: 1.773333rem;padding: 0.383333rem;
+            >p{height: 0.401333rem;color:#999999;margin-bottom: 0.306667rem;}
+            .sanzhong{height: 1.12rem;display:flex;justify-content:flex-start;
+                span{
+                    display:inline-block;width: 2.06667rem;height:0.8rem;text-align: center;line-height: 0.8rem;margin-left: 0.213333rem;font-size: 0.398667rem;color:#898989;border:0.021333rem solid #F0F0F0;border-radius:0.206667rem;
+                }
+            }
+            .adress{min-height: 1.773333rem;
+                .showadress{
+                    height: 1.773333rem;background-color: #F5F5F5;padding: 0.333333rem;
+                    .user{
+                        height: 0.482667rem;
+                        .phone{margin-left: 0.32rem;}
+                    }
+                    .dizhi{
+                        height: 0.482667rem;margin-top: 0.213333rem;color:#999999;}
+                }
+                .cometogettickets{
+                    height: 6.452667rem;
+                    padding: 0.42667rem 0.3rem;background-color: #F5F5F5;display:none;
+                     >p{text-align: center;color:#999;margin-bottom:0.270667rem;}
+                    .messagecenter{height: 2.4rem;border:1px solid #F5F5F5;border-radius:0.170667rem;background-color: #FFF;
+                        .one{border-bottom:1px solid #999;}
+                        p{width: 7.8rem;height: 1.2rem;margin: 0 auto;background-color: #fff;padding: 0.27667rem 0;display:flex;justify-content:flex-start;
+                            span{display:inline-block;width: 0.84rem;height: 0.64rem;font-size: 0.526667rem;text-align: center;line-height:0.64rem;}
+                            input{width: 6.033333rem;height: 0.706667rem;outline:none;font-size: 0.326667rem;border:none;margin-left: 0.170667rem
+                            }
+                            .fonphone{font-size: 0.726667rem;}
+                        }
+                    }
+                    .posaddresscenter{
+                        font-size: 0.333333rem;margin-top: 0.133333rem;padding-left: 0.333333rem;color:#999;
+                        p{margin-top: 0.433333rem}
+                    }
+                }
+                .scenetickets{
+                    height: 5rem;background-color: #F5F5F5;padding: 0.42667rem 0.3rem;border:1px solid #F5F5F5;border-radius:0.170667rem;display:none;
+                    >p{text-align: center;color:#999;margin-bottom:0.270667rem;}
+                    .message{height: 2.4rem;border:1px solid #F5F5F5;border-radius:0.170667rem;background-color: #FFF;
+                        .one{border-bottom:1px solid #999;}
+                        p{width: 7.8rem;height: 1.2rem;margin: 0 auto;background-color: #fff;padding: 0.27667rem 0;display:flex;justify-content:flex-start;
+                            span{display:inline-block;width: 0.84rem;height: 0.64rem;font-size: 0.526667rem;text-align: center;line-height:0.64rem;}
+                            input{width: 6.033333rem;height: 0.706667rem;outline:none;font-size: 0.326667rem;border:none;margin-left: 0.170667rem
+                            }
+                            .fonphone{font-size: 0.726667rem;}
+                        }
+                        
+                    }
+                    .posaddress{
+                        font-size: 0.333333rem;margin-top: 0.133333rem;padding-left: 0.333333rem;color:#999;
+                    }
+                }
+
+            }
+            
+            
+        }
+        .heji{
+            height: 5.5rem;background-color: #F0F0F0;padding-top: 0.333333rem;
+            .hejimain{
+                height: 4rem;background-color: #FFF;padding: 0.383333rem;font-size: 0.386667rem;
+                ul{
+                    height: 100%;
+                    li{
+                        height: 33%;line-height: 1.06667rem;display:flex;justify-content:space-between;
+                    }
+                }
+            }
+        }
+
+    }
+    #ccjfooter{height: 1.48rem;display:flex;justify-content:flex-start;
+        div{
+            width: 5.0rem;height: 100%;text-align: center;line-height: 1.48rem;font-size:0.412rem;
+        }
+        .footerleft{color:#999999;
+            .yingfu{color:#FF7919;}
+        }
+        .footerright{color:#fff;
+            background-color: #FF7919;
+        }
+    }
+
+}
+
+

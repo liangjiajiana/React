@@ -19,6 +19,10 @@
         li:nth-child(2){
             font-size:0.384rem;
         }
+        .logo{
+            height:0.808667rem;
+            background: #fff;
+        }
     }
     .main{
         flex:1;
@@ -30,6 +34,39 @@
             font-size:0.384rem;
             border-bottom:1px solid #ccc;
         }
+        div span:hover{
+            border-bottom:2px solid #f90;
+            padding-bottom:0.203333rem;
+            color:#f90;
+        }
+        .zhezhao{
+            height:0.284rem;
+            background:#F7F7F7;
+        }
+        .list-block{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            .list-item{
+                line-height:1.06rem;
+                input{
+                    height:0.86rem;
+                    width:7.01333rem;
+                    border:1px solid #fff;
+                    margin-left:0.228rem;
+                    font-size:0.384rem;
+                }
+                i{
+                    font-size:0.512rem;
+                }
+                .phone{
+                    border-bottom:1px solid #ccc;
+                }
+                .password{
+                    border-bottom:1px solid #ccc;
+                }  
+            }
+        }
     }
-
 }

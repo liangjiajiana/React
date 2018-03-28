@@ -1,0 +1,35 @@
+#login{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    .header{
+        display:flex;
+        height:1.138667rem;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid #ccc;
+        i{
+            font-size:0.569333rem;
+            padding-left:0.113333rem;
+        }
+        .right{
+            height:1.138667rem;
+            width: 0.64rem;
+        }
+        li:nth-child(2){
+            font-size:0.384rem;
+        }
+    }
+    .main{
+        flex:1;
+        .tabItem{
+            height:1.038667rem;
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            font-size:0.384rem;
+            border-bottom:1px solid #ccc;
+        }
+    }
+
+}

@@ -1,0 +1,19 @@
+.footer{
+    display:flex;
+    height: 1.266667rem;
+    background: green;
+    justify-content: space-around;
+    a{
+        display:inline-block;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        i{
+            font-size:0.484rem;
+        }
+        span{
+            font-size:0.384rem;
+        }
+    }
+}

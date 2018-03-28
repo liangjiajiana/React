@@ -5,6 +5,7 @@ import HomeComponent from '../component/home/HomeComponent'
 import PerformanceComponent from '../component/performance/performanceComponent'
 import MineComponent from '../component/Mine/MineComponent'
 import LoginComponent from '../component/login/loginComponent'
+import SearchComponent from '../component/search/searchComponent.js'
 
 export default(
     <Route history = {hashHistory}>
@@ -12,5 +13,6 @@ export default(
         <Route path="performance" component = {PerformanceComponent}/>
         <Route path="mine" component = {MineComponent}/>
         <Route path="login" component = {LoginComponent}/>
+        <Route path="search" component= {SearchComponent} />
     </Route> 
 )

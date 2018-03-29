@@ -1,0 +1,134 @@
+#address{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    .header{
+        display:flex;
+        height:1.138667rem;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid #ccc;
+        i{
+            font-size:0.569333rem;
+            padding-left:0.113333rem;
+        }
+        .right{
+            height:1.138667rem;
+            width: 0.64rem;
+        }
+        li:nth-child(2){
+            font-size:0.384rem;
+        }
+    }
+    .main{
+        flex:1;
+        .delivery{
+            display:flex;
+            height:1.173333rem;
+            // border-bottom:1px solid #ccc;
+            line-height:1.173333rem;
+            li:nth-child(1){
+                padding-left:0.266667rem;
+            }
+            input{
+                margin-left:0.826667rem;
+                border-bottom:1px solid #ccc;
+                font-size:0.38rem;
+                border-top:1px solid #ccc;
+                width:7.4rem;
+                border-left:1px solid #fff;
+                border-right:1px solid #fff;
+            }
+        }
+        .Addphone{
+            display:flex;
+            height:1.173333rem;
+            border-bottom:1px solid #ccc;
+            line-height:1.173333rem;
+            border-top:1px solid #ccc;
+            li:nth-child(1){
+                padding-left:0.266667rem;
+            }
+            input{
+                margin-left:1.126667rem;
+                border:1px solid #fff;
+                font-size:0.38rem;
+                width:7.4rem;
+            }
+        }
+        .adr{
+            display:flex;
+            height:1.173333rem;
+            align-items:center;
+            border-bottom:1px solid #ccc;
+            li:nth-child(1){
+                padding-left:0.266667rem;
+            }
+            li:nth-child(2){
+                padding-left:1.166667rem;
+                div select:nth-child(1){
+                    height:0.873333rem;
+                    font-size:0.284rem;
+                    width:2.366667rem;
+                }
+                div select:nth-child(2){
+                    height:0.873333rem;
+                    font-size:0.284rem;
+                     width:2.366667rem;
+                }
+                div select:nth-child(3){
+                    height:0.873333rem;
+                    font-size:0.284rem;
+                     width:2.366667rem;
+                }
+            }
+        }
+        .delivery{
+            display:flex;
+            height:1.173333rem;
+            // border-bottom:1px solid #ccc;
+            line-height:1.173333rem;
+            li:nth-child(1){
+                padding-left:0.266667rem;
+            }
+            input{
+                margin-left:0.826667rem;
+                border-bottom:1px solid #ccc;
+                font-size:0.38rem;
+                border-top:1px solid #ccc;
+                width:7.4rem;
+                border-left:1px solid #fff;
+                border-right:1px solid #fff;
+            }
+        }
+        .Addphone{
+            display:flex;
+            height:1.173333rem;
+            border-bottom:1px solid #ccc;
+            line-height:1.173333rem;
+            border-top:1px solid #ccc;
+            li:nth-child(1){
+                padding-left:0.266667rem;
+            }
+            input{
+                margin-left:1.126667rem;
+                border:1px solid #fff;
+                font-size:0.38rem;
+                width:6.4rem;
+            }
+        }
+        .addSite{
+            display:flex;
+            justify-content:center;
+            div{
+                height:1.066667rem;
+                width:7.36rem;
+                background:#f90;
+                color:#fff;
+                text-align:center;
+                line-height:1.066667rem;
+                margin-top:0.64rem;
+            }
+        }
+    }
+}    

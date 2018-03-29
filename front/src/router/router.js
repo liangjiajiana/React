@@ -13,6 +13,9 @@ import LjjindentComponent from '../component/ljj-indent/LjjindentComponent'
 import ModalComponent from '../component/ModalComponent/ModalComponent'
 import PaymentComponent from '../component/payment/paymentComponent'
 import ConfirmorderComponent from '../component/confirmorder/confirmorderComponent'
+import SearchComponent from '../component/search/searchComponent'
+import LittleswanComponent from '../component/littleswan/littleswanComponent'
+import AddaddressComponent from '../component/addAddress/addAddressComponent'
 export default(
     <Route history = {hashHistory}>
         <Route path="/" component = {HomeComponent} />
@@ -28,5 +31,8 @@ export default(
         <Route path="Modal" component = {ModalComponent}/>
         <Route path="payment" component = {PaymentComponent}/>
         <Route path="confirmorder" component = {ConfirmorderComponent}/>
+        <Route path="search" component = {SearchComponent}/>
+        <Route path="littleswan" component = {LittleswanComponent}/>
+        <Route path="address" component = {AddaddressComponent}/>
     </Route> 
 )

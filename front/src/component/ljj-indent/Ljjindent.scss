@@ -50,6 +50,10 @@
                     .name{
                         color:#000000;
                         font-size:0.384rem;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width:5.866667rem;
                     }
                     .time{
                         color:#ABABAB;
@@ -70,7 +74,7 @@
                 }
                 img{
                     padding-right:0.277333rem;
-                    width:3.933333rem;
+                    width:2.533333rem;
                     height:3.133333rem;
                 }
             }

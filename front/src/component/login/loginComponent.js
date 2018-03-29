@@ -26,7 +26,9 @@ export default class LoginComponent extends Component{
             <div id="login">
                 <ul className="header">
                     <li>
+                        <Link to="#/">
                         <i className="icon iconfont icon-zuojiantou"></i>
+                        </Link>
                     </li>
                     <li><img className="logo" src="src/component/login/login.png"/></li>
                     <li className="right"></li>

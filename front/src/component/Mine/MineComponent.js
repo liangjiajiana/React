@@ -121,7 +121,9 @@ export default class MineComponent extends Component{
                             <span>收货地址</span>
                         </div>
                         <div>
-                            <i className="icon iconfont icon-youjiantou-01"></i>
+                            <Link to="/littleswan">
+                                <i className="icon iconfont icon-youjiantou-01"></i>
+                            </Link>
                         </div>
                     </div>
                     <div className="zhezhao"></div>

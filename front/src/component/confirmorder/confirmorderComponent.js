@@ -51,7 +51,7 @@ export default class ConfirmorderCoponent extends Component{
                                     <span>活动/优惠</span>
                                 </div>
                                 <div className="huodongright">
-                                    活动/优惠劵/优惠码 >
+                                    活动/优惠劵/优惠码
                                 </div>
 
                             </div>

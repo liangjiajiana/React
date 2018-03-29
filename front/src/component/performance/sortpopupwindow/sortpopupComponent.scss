@@ -1,0 +1,52 @@
+.sortpopupcomponent{
+    position:absolute;
+    top:1.068376rem;
+    right:-.2rem;
+    width: 2.86667rem;
+    background-color: #fff;
+    border-radius: .17067rem;
+    z-index:300;
+    
+    >div{
+        position:relative;
+        height: 1.4rem;
+        line-height: 1.37867rem;
+        padding-left: .64rem;
+        
+        font-size:0.34188rem;
+        color: #666;
+    }
+    >div:nth-child(2){
+        border-bottom: 1px solid #e6e6e6;
+        >span{
+            display:none;
+            position:absolute;
+            top:0.0rem;
+            right:0.3rem;
+            font-size:0.34188rem;
+            color: #ff7919;
+        }
+    }
+    >div:nth-child(3){
+        >span{
+            display:none;
+            position:absolute;
+            top:0.0rem;
+            right:0.3rem;
+            font-size:0.34188rem;
+            color: #ff7919;
+        }
+    }
+    >.triangle{
+        margin:0;
+        padding:0;
+        width:0;
+        height:0;
+        
+        border:.14103rem solid rgba(0,0,0,0);
+        border-bottom:.14103rem solid #fff;
+        position:absolute;
+        top:-.25rem;
+        right:0.28rem;
+    }
+}

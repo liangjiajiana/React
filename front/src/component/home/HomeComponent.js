@@ -28,7 +28,7 @@ export default class HomeComponent extends Component{
                 dataset:res.data
             })
 
-            console.log(this.state.dataset);
+            
 
 
         })
@@ -68,11 +68,11 @@ export default class HomeComponent extends Component{
                 </div>    
                 <div className="nav">
                     <div className="nav_t">
-                        <div><Link to="/search"><i className="iconfont icon-jita"></i>演唱会</Link></div>
-                        <div><Link to="/login"><i className="iconfont icon-zhuanjiguangpan"></i>音乐会</Link></div>
-                        <div><Link to="/mine"><i className="iconfont icon-huapimianju1"></i>舞台剧</Link></div>
-                        <div><Link to="/search"><i className="iconfont icon-huatong"></i>音乐剧</Link></div>
-                        <div><Link to="/performance"><i className="iconfont icon-ertong"></i>儿童</Link></div>
+                        <div><Link to="/performance/con"><i className="iconfont icon-jita"></i>演唱会</Link></div>
+                        <div><Link to="/performance/mu"><i className="iconfont icon-zhuanjiguangpan"></i>音乐会</Link></div>
+                        <div><Link to="/performance/mo"><i className="iconfont icon-huapimianju1"></i>舞台剧</Link></div>
+                        <div><Link to="/performance/muj"><i className="iconfont icon-huatong"></i>音乐剧</Link></div>
+                        <div><Link to="/performance/ch"><i className="iconfont icon-ertong"></i>儿童</Link></div>
                     </div>
                     <div className="nav_b">
                         <div><i className="iconfont icon-rili"></i>日历</div>
@@ -91,7 +91,7 @@ export default class HomeComponent extends Component{
                                     return (
                                         
                                         <li key={item.id}>
-                                        <Link to={'/performance/'+item.id} className="gto">
+                                        <Link to={'/detail/'+item.id} className="gto">
                                             <div className='img'><img src={item.imgs} /></div>
                                             <div className="det">
                                                 <h3>{item.title}</h3>

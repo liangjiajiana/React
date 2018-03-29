@@ -10,6 +10,8 @@ import {Link} from 'react-router'
 
 import CarouselComponent from '../carousel/carouselComponent.js'
 
+import SpinnerComponent from '../../spinner/SpinnerComponent.js'
+
 
 import './home.scss'
 
@@ -87,7 +89,9 @@ export default class HomeComponent extends Component{
                                 this.state.dataset.map((item)=>{
                                     // console.log(item)
                                     return (
+                                        
                                         <li key={item.id}>
+                                        <Link to={'/performance/'+item.id} className="gto">
                                             <div className='img'><img src={item.imgs} /></div>
                                             <div className="det">
                                                 <h3>{item.title}</h3>
@@ -97,7 +101,9 @@ export default class HomeComponent extends Component{
                                                 </div>
                                                 <p>¥ {item.price}</p>
                                             </div>
+                                            </Link>
                                         </li>
+                                        
                                     )
                                         
                                 })
@@ -109,7 +115,7 @@ export default class HomeComponent extends Component{
                         </div>
                 </div>
                 <FooternavComponent/>
-                <div className="xiding"></div> 
+                <SpinnerComponent/>
             </div>
         )
     }

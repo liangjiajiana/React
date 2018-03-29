@@ -10,9 +10,9 @@ import SearchComponent from '../component/search/searchComponent.js'
 export default(
     <Route history = {hashHistory}>
         <Route path="/" component = {HomeComponent} />
-        <Route path="performance" component = {PerformanceComponent}/>
+        <Route path="/performance(/:id)" component = {PerformanceComponent}/>
         <Route path="mine" component = {MineComponent}/>
-        <Route path="login" component = {LoginComponent}/>
+        <Route path="/login(/:id)" component = {LoginComponent}/>
         <Route path="search" component= {SearchComponent} />
     </Route> 
 )

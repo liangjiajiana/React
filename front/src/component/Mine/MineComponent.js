@@ -159,7 +159,7 @@ export default class MineComponent extends Component{
                     <div className="service">
                         <div className="serviceHotline">
                             <i className="icon iconfont icon-zaixiankefu"></i>
-                            <span>在线客服</span>
+                            <Link to='customerservice'>在线客服</Link>
                         </div>
                     </div>
                 </div>

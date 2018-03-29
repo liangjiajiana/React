@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 12:06:17
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-28 16:54:26
+* @Last Modified time: 2018-03-29 19:34:31
 */
 
 import React,{Component} from 'react'
@@ -66,7 +66,7 @@ export default class MapComponent extends Component{
                     <div className='left'>
                         <a  onClick={this.back.bind(this)}><span className='iconfont icon-fanhui'></span></a>
                     </div>
-                    <div className='center'>演出详情</div>
+                    <div className='center'>场馆地址</div>
                     <div className='right'>
                         <a onClick={this.showjumppage.bind(this)}><span className='iconfont icon-more'></span></a>
                     </div>

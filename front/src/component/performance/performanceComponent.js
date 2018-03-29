@@ -19,7 +19,7 @@ export default class PerformanceComponent extends Component{
         dataset:[],
         rowsCount:0
     }
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.setState({
             spinnerShow: true
         })
@@ -30,6 +30,37 @@ export default class PerformanceComponent extends Component{
                 rowsCount: res.rowsCount
             })
         })
+
+        if(this.props.params.id){
+            var id = this.props.params.id;
+            // var cn = ['全部','演唱会','音乐会','话剧歌剧','儿童亲子','音乐剧','舞蹈芭蕾','戏曲综艺','展览']
+            var en = [undefined,'con','mu','mo','ch','muj','balei','xiju','zl']
+            var idx = en.indexOf(id);
+            
+            var type = id;
+            this.setState({sorttype:type,rollingadd:4});
+            this.refs.main.scrollTo(0,0);
+
+
+            for(var i=0;i<this.refs.sorttitle.children.length;i++){
+                this.refs.sorttitle.children[i].style.borderBottom = 'none'
+                this.refs.sorttitle.children[i].children[0].style.color = '#666'
+            }
+            
+            this.refs.sorttitle.children[idx].style.borderBottom = '2px solid red'
+            this.refs.sorttitle.children[idx].children[0].style.color = 'red'
+            this.setState({
+                spinnerShow: true
+            })
+            http.get('http://10.3.136.36:8080/sgoods',{kind:type}).then((res) => {
+                this.setState({
+                    spinnerShow: false,
+                    dataset: res.data.slice(0,this.state.rollingadd),
+                    rowsCount: res.rowsCount
+                })
+            })
+        }
+        
     }
     sort = (e) => {
         if(e.target.tagName.toLowerCase()=='a'){
@@ -132,7 +163,7 @@ export default class PerformanceComponent extends Component{
                 <div className='header'>
                     <div className='searchbar'>
                         <a className='location'><span>广州</span><span className='iconfont icon-jiantouxia'></span></a>
-                        <a className='search'><span className='iconfont icon-fangdajing'></span><span>搜索演出、艺人或场馆</span></a>
+                        <Link className='search' to='search'><span className='iconfont icon-fangdajing'></span><span>搜索演出、艺人或场馆</span></Link>
                         <a className='sort' onClick={this.changesortpopupwindow.bind(this)}><span className='iconfont icon-sort_icon'></span></a>
                         <SortPopupWindowComponent show={this.state.sortpopupwindow} changemask={this.changemask} timesort={this.timesort} recommondsort={this.recommondsort}></SortPopupWindowComponent>
                     </div>

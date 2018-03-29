@@ -2,13 +2,13 @@
 * @Author: Marte
 * @Date:   2018-03-28 10:18:56
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-28 11:22:14
+* @Last Modified time: 2018-03-29 19:32:40
 */
 
 import React,{Component} from 'react';
 
 import './jumppageComponent.scss';
-
+import {Router, Route, hashHistory, Link, IndexRoute, browserHistory} from 'react-router';
 export default class JumppageComponent extends Component{
 
     render(){
@@ -16,8 +16,8 @@ export default class JumppageComponent extends Component{
         let html = (
             <div className='jumppagecomponent'>
                 <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_607962_ij4sszle91wcdi.css" />
-                <a><span className='iconfont icon-iconfuzhi'></span>首页</a>
-                <a><span className='iconfont icon-shouye'></span>我的聚灯</a>
+                <Link to='/'><span className='iconfont icon-iconfuzhi'></span>首页</Link>
+                <Link to='mine'><span className='iconfont icon-shouye'></span>我的聚灯</Link>
                 <div className='triangle'></div>
             </div>  
         )

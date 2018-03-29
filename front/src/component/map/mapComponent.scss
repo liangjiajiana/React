@@ -1,0 +1,96 @@
+body,html{height:100%;}
+#mapcomponent{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    background-color:#F0F0F0;
+    position:relative;
+    >.header{
+        background-color:#fff;
+        height:1.175214rem;
+        line-height:1.175214rem;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        >.left{  
+            >a{
+                padding-left:0.512821rem;
+                >span{
+                    font-size:0.512821rem;
+                }
+            }
+        }
+        >.center{
+            font-size:0.42735rem;
+        }
+        >.right{
+            >a{
+                padding-right:0.512821rem;
+                >span{
+                    font-size:0.555556rem;
+                }
+            }
+        }
+    }
+    >.body{
+        overflow-x:hidden;
+        position:relative;
+        width:100%;
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        >#l-map{height:40%;width:100%;}
+        >#r-result,#r-result table{height:60%;width:100%;font-size:0.25641rem;}
+       
+    }
+    >.footer{
+        padding:0.320513rem 0.42735rem;
+        width:100%;
+        height:2.777778rem;
+        background-color:#dadada;
+        >a{
+            width:100%;
+            display:block;
+            >.imgbox{
+                float:left;
+                >img{
+                    width:1.709402rem;
+                    height:2.136752rem;
+                }
+            }
+            >.contentbox{
+                margin-left:0.42735rem;
+                float:left;
+                >p:nth-child(1){
+                    font-size: 0.42735rem;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #212121;
+                }
+                >p:nth-child(2){
+                    margin-top: .42667rem;
+                    margin-bottom: .14933rem;
+                    color: #666;
+                }
+                >p:nth-child(3){
+                    color: #666;
+                    >span{
+                        color:red;
+                    }
+                }
+            }
+        }
+    }
+    >.mask{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.2);
+        z-index: 200;
+        display:none;
+    }
+}

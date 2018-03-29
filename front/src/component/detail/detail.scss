@@ -1,0 +1,272 @@
+body,html{height:100%;}
+body,*{ max-height: 999999px; }//加上这句话避免overflow-y使字体变大，原因未知
+#Detail{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    background-color:#F0F0F0;
+    position:relative;
+    >.header{
+        background-color:#fff;
+        height:1.175214rem;
+        line-height:1.175214rem;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        >.left{  
+            >a{
+                padding-left:0.512821rem;
+                >span{
+                    font-size:0.512821rem;
+                }
+            }
+        }
+        >.center{
+            font-size:0.42735rem;
+        }
+        >.right{
+            >a{
+                padding-right:0.512821rem;
+                >span{
+                    font-size:0.555556rem;
+                }
+            }
+        }
+    }
+    >.headercover{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        background-color: #010304;
+        height:1.175214rem;
+        line-height:1.175214rem;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+         
+        z-index:400;
+        >.left{  
+            >a{
+                padding-left:0.512821rem;
+                >span{
+                    font-size:0.512821rem;
+                    color:#fff;
+                }
+            }
+        }
+        >.center{
+            font-size:0.42735rem;
+        }
+        >.right{
+            >a{
+                padding-right:0.512821rem;
+                >span{
+                    font-size:0.555556rem;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    >.main{
+        flex:1;
+        overflow-y:scroll;
+        >.msg{
+            padding-bottom:0.42735rem;
+            position:relative;
+            background-color:#fff;
+            >.shady{
+                overflow:hidden;
+                position:relative;
+                width:100%;
+                height:5.982906rem;
+                background-color:#010304;
+                >.imgbox{
+                    z-index:30;
+                    margin-top:0.641026rem;
+                    position:absolute;
+                    left:50%;
+                    transform:translate(-50%,0);
+                    >img{
+                        width:3.589744rem;
+                        height:4.807692rem;
+                    }
+                }
+                >.tour{
+                    position:absolute;
+                    top:56%;
+                    right:5%;
+                    border:1px solid #dadada;
+                    color:#dadada;
+                    padding:0.106838rem;
+                    border-radius:0.106838rem;
+                    font-size:0.384615rem;
+                }
+            }
+            >.whitecover{
+                position:absolute;
+                top:4.273504rem;
+                left:-25%;
+                width:150%;
+                height:2.136752rem;
+                background-color:#fff;
+                border-radius:50%;
+            }
+            >.text{
+                position:relative;
+                padding:0 0.42735rem;
+                >.title{
+                    word-break: break-word;
+                    color: #212121;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    font-size:0.470085rem;
+                    margin-bottom:0.512821rem;
+                }
+                >p:nth-child(2){
+                    padding-bottom: 0.17094rem;
+                    font-size: 0.384615rem;
+                    color: #666;
+                }
+                >p:nth-child(3){
+                    padding-bottom: 0.17094rem;
+                    font-size: 0.384615rem;
+                    color: #666;
+                    >.location{
+                        margin-left:0.320513rem;
+                        font-size:0.42735rem;
+                    }
+                }
+                >p:nth-child(4){
+                    padding: .21333rem 0 .64rem;
+                    font-size: 0.42735rem;
+                    color: #ff7919;
+                }
+                >div:nth-child(5){
+                    position:relative;
+                    >p{
+                        color:#C5C5C5;
+                        font-size:0.384615rem;
+                        >span{
+                            padding: 0 0.042735rem;
+                            height: 0.42735rem;
+                            font-size: 0.25641rem;
+                            text-align: center;
+                            line-height: 0.384615rem;
+                            color: #ff7919;
+                            border: 1px solid #ff7919;
+                            border-radius: 0.064103rem;
+                            margin-right: 0.128205rem;
+                            
+                        }
+                    }
+                    >span{
+                        position:absolute;
+                        right:0.106838rem;
+                        top:0.106838rem;
+                        font-size:0.42735rem;
+                    }
+                }
+            }
+        }
+
+        >.produce{
+            padding:0 0.42735rem;
+            margin-top:0.299145rem;
+            background-color:#fff;
+            >h3{
+                padding-top: 0.641026rem;
+                font-size: 0.42735rem;
+                font-weight: 400;
+                text-align: center;
+                color: #212121;
+            }
+            >p:nth-child(2){
+                padding-top: 0.470085rem;
+                font-size: 0.384615rem;
+                color:#898989;
+            }
+            >a:nth-child(3){
+                padding: 0.598291rem 0;
+                font-size: 0.34188rem;
+                color: #999;
+                display: block;
+                text-align: center;
+                position: relative;
+                >span{
+                    font-size:0.42735rem;
+                }
+            }
+        }
+
+        >.instructions{
+            padding:0 0.42735rem;
+            margin-top:0.299145rem;
+            background-color:#fff;
+            >h3{
+                padding-top: 0.641026rem;
+                font-size: 0.42735rem;
+                font-weight: 400;
+                text-align: center;
+                color: #212121;
+            }
+            >p{
+                line-height:0.641026rem;
+                font-size: 0.384615rem;
+                color:#898989;
+            }
+            >p:last-child{
+                margin-top: 0.42735rem;
+                margin-bottom:0.854701rem;
+                border-top: 1px dashed #ccc;
+                padding: .55467rem 0 .74667rem;
+                font-size: 0.34188rem;
+                line-height: 0.42735rem;
+                color: #999;
+                >span{
+                    color: #666;
+                }
+            }
+            
+        }
+    }
+    >.footer{
+        height:1.282051rem;
+        display:flex;
+        flex-direction:row;
+
+        >a:nth-child(1){
+            display:block;
+            width:20%;
+            background-color:#fff;
+            text-align:center;
+            padding-top:0.106838rem;
+            >span{
+                font-size:0.555556rem;
+            }
+        }
+        >a:nth-child(2){
+            display:block;
+            width:80%;
+            color: #fff;
+            background: #ff7919;
+            text-align:center;
+            line-height:1.282051rem;
+            font-size:0.42735rem;
+        }
+    }
+    >.mask{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.2);
+        z-index: 200;
+        display:none;
+    }
+}

@@ -33,8 +33,8 @@ export default(
         <Route path="settings" component = {SettingsComponent}/>
         <Route path="Ljjindent" component = {LjjindentComponent }/>
         <Route path="Modal" component = {ModalComponent}/>
-        <Route path="payment" component = {PaymentComponent}/>
-        <Route path="confirmorder" component = {ConfirmorderComponent}/>
+        <Route path="payment/:id" component = {PaymentComponent}/>
+        <Route path="confirmorder/:id" component = {ConfirmorderComponent}/>
         <Route path="search" component = {SearchComponent}/>
         <Route path="littleswan" component = {LittleswanComponent}/>
         <Route path="address" component = {AddaddressComponent}/>

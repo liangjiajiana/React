@@ -17,7 +17,6 @@ export default class searchComponent extends Component{
         var data=this.refs.fu.value
         if(data){
             http.get('fuzzygoods',{data}).then((res)=>{
-                console.log(res);
                 this.setState({
                     dataset:res[0]
                 })

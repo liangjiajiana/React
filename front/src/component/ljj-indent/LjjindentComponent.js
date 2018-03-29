@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router'
+import {Router, Route, hashHistory, IndexRoute,Link } from 'react-router';
 
 import http from '../../utils/httpclient.js'
 import './Ljjindent.scss'
@@ -21,6 +21,11 @@ export default class LjjindentComponent extends Component{
             show:false
         }) 
     }
+    get(id){
+        // location.href = '/confirmorder/'+id
+        this.props.router.push('/confirmorder/'+id)
+
+    }
     componentWillMount(){
         var data = window.localStorage.getItem('user');
         if(data){
@@ -36,6 +41,19 @@ export default class LjjindentComponent extends Component{
             })
         }else{
             location.href='#/login';
+        }
+    }
+    getstatus(str){
+        var obj={
+            tbp:'取消订单',
+            yfk:'已付款',
+            yqx:'已取消'
+        }
+        return obj[str]
+    }
+    payment(id){
+        if(id){
+            this.props.router.push('/payment/'+id)
         }
     }
     render(){
@@ -56,14 +74,13 @@ export default class LjjindentComponent extends Component{
                 <ul className="list-item">
                     {
                         this.state.dataset.map((item)=>{
-                            console.log(item);
                             return(
                                 <li className="list" key={item.id}>
                                     <div className="orderTime">
                                         <span>下单时间:2017年</span>
-                                        <span>等待付款</span>
+                                        <span>{this.getstatus(item.status)}</span>
                                     </div>
-                                    <div className="list-c">
+                                    <div className="list-c" onClick={this.get.bind(this,item.id)}>
                                         <img src={item.imgs}/>
                                         <div className="list-details">
                                             <span  className="name" >{item.title}</span>
@@ -73,9 +90,9 @@ export default class LjjindentComponent extends Component{
                                         </div>
                                     </div>
                                     <div className="list-b">
-                                        <button className="cancellation">取消订单</button>
-                                        <Link to="/payment">
-                                            <button className="promptly">立即付款</button>
+                                        <button className="cancellation">{this.getstatus(item.status)}</button>
+                                        <Link to="/payment" >
+                                            <button className="promptly" style={{display:item.status=='tbp' ? 'block' : 'none'}} onClick={this.payment.bind(this,item.id)}>立即付款</button>
                                         </Link>
                                     </div>
                                 </li>

@@ -3,8 +3,12 @@ import {Link} from 'react-router'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 import './confirmorder.scss'
-
+import http from '../../utils/httpclient.js'
 export default class ConfirmorderCoponent extends Component{
+    state = {
+        dataset:[],
+        address:{}
+    }
     change(){
             $(this.refs.one).show().siblings().hide()
     }
@@ -13,6 +17,36 @@ export default class ConfirmorderCoponent extends Component{
     }
     rightchange(){
             $(this.refs.three).show().siblings().hide()
+    }
+    componentWillMount(){
+        if(this.props.params.id){
+            var obj=JSON.parse(window.localStorage.getItem('user')).adr
+            if(obj){
+            }else{
+                obj={}
+            }
+            http.get('order',{id:this.props.params.id}).then((res) => {
+                console.log(res);
+                this.setState({
+                    dataset:res.data,
+                    address:obj
+                })
+            })
+        }
+
+    }
+    get(id){
+        if(window.localStorage.getItem('user')){
+            var obj=JSON.parse(window.localStorage.getItem('user'));
+            obj.orderid=id
+            
+            window.localStorage.setItem('user',JSON.stringify(obj));
+        }
+        location.href="#/littleswan"
+    }
+    payment(){
+        var id=this.state.dataset[0] ? this.state.dataset[0].id:12321
+        this.props.router.push('/payment/'+id)
     }
     render(){
         return(
@@ -27,11 +61,13 @@ export default class ConfirmorderCoponent extends Component{
                         <div className="tushuneirong">
                             <div className="tushuneirongs"> 
                                 <div className="tushutop">
-                                    <img src="../../../libs/1508126440245.jpg"/>
+                                    <img src={this.state.dataset[0] ? this.state.dataset[0].imgs :'http://10.3.136.36:8080/assets/1.jpg'}/>
                                     <div className="name">
-                                        <div className="tushuname">【小橙堡·微剧场】保加利亚温情故事木偶剧《顽皮小精灵》</div>
-                                        <p>时间:<span></span></p>
-                                        <p>场馆:<span></span></p>
+                                        <div className="tushuname">{
+                                            this.state.dataset[0] ? this.state.dataset[0].title : 777
+                                        }</div>
+                                        <p>时间:<span>{this.state.dataset[0] ? this.state.dataset[0].time : 777}</span></p>
+                                        <p>场馆:<span>{this.state.dataset[0] ? this.state.dataset[0].venue : 777}</span></p>
                                     </div>
                                 </div>
                                 <div className="tushubuttom">
@@ -39,7 +75,7 @@ export default class ConfirmorderCoponent extends Component{
                                         合 计(<span> 1 </span> 张)
                                     </span>
                                     <div className="zongjia">
-                                    ￥<span>180.00</span><i className="fa fa-chevron-circle-down"></i>
+                                    ￥<span>{this.state.dataset[0] ? this.state.dataset[0].price : 777}</span><i className="fa fa-chevron-circle-down"></i>
                                     </div>
                                 </div>
                             </div>
@@ -63,16 +99,18 @@ export default class ConfirmorderCoponent extends Component{
                                 <span onClick={this.centerchange.bind(this)}>上门取票</span>
                                 <span onClick={this.rightchange.bind(this)}>现场取票</span>
                             </div>
-                            <div className="adress">
+                            <div className="adress" onClick={
+                                this.get.bind(this,this.state.dataset[0] ? this.state.dataset[0].id : 1)
+                            }>
                                 <div className="showadress" ref="one">
                                     <p className="user">
-                                        <span className="username">adsda</span>
+                                        <span className="username">{this.state.address? this.state.address.shouname:123 }</span>
                                         <span className="phone">
-                                            18207856580
+                                            {this.state.address? this.state.address.phone:123 }
                                         </span>
                                     </p>
                                     <p className="dizhi"> 
-                                        北京  北京 东城区88号
+                                        {this.state.address? this.state.address.address:123 }
                                     </p>
                                 </div>
                                 <div className="cometogettickets" ref="two">
@@ -107,9 +145,9 @@ export default class ConfirmorderCoponent extends Component{
                         <div className="heji">
                             <div className="hejimain"> 
                                 <ul>
-                                <li><span>商品合计 :</span><span>￥ 140.00</span></li>
-                                    <li>运费合计 :<span>￥ 140.00</span></li>
-                                    <li>优惠:<span>￥ 140.00</span></li>
+                                <li><span>商品合计 :</span><span>￥ {this.state.dataset[0] ? this.state.dataset[0].price : 777}</span></li>
+                                    <li>运费合计 :<span>￥ {this.state.dataset[0] ? this.state.dataset[0].price : 777}</span></li>
+                                    <li>优惠:<span>￥ {this.state.dataset[0] ? this.state.dataset[0].price : 777}</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -117,14 +155,14 @@ export default class ConfirmorderCoponent extends Component{
                     <div id="ccjfooter">
                         <div className="footerleft">
                             <span>
-                                应付 :<span className="yingfu">￥ 195.00</span>
+                                应付 :<span className="yingfu">￥ {this.state.dataset[0] ? this.state.dataset[0].price : 777}</span>
                             </span>
                             <span>
 
                             </span>
                         </div>
 
-                        <div className="footerright">
+                        <div className="footerright" onClick={this.payment.bind(this)}>
                                 确定
                         </div>
                     </div>

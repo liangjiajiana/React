@@ -2,9 +2,12 @@ import React,{Component} from 'react'
 import {Link} from 'react-router'
 import './payment.scss'
 import $ from 'jquery'
+import http from '../../utils/httpclient.js'
 
 export default class PaymentComponent extends Component{
-
+    state={
+        data:[]
+    }
     componentDidMount(){
         //最终时间
         var overtime = new Date(1522532235605+2*3600*1000);
@@ -23,6 +26,11 @@ export default class PaymentComponent extends Component{
             $(this.refs.time).html(time);
         }
         var timer = setInterval(showTime.bind(this),1000);
+        http.get('singorder',{id:this.props.params.id}).then((res) => {
+            this.setState({
+                data:res.data
+            })
+        })
     }
     active(event){
         if(event.target.className=='fa fa-check-circle'){
@@ -30,13 +38,23 @@ export default class PaymentComponent extends Component{
         }
     }
     fukuan(){
-        alert('您已支付成功~')
+        if(this.props.params.id){
+            var data={
+                id:this.props.params.id,
+                status:'yfk'
+            }
+            http.get('uporder',{data:data}).then((res) => {
+                if(res.status){
+                    location.href="#/Ljjindent"
+                }
+            })
+        }
     }
     render(){
         return(
             <div id="ccjzhifu">
                 <div id="ccjheader"> 
-                        <Link to="/confirmorder">
+                        <Link to="/Ljjindent">
                             <span className="fanhui  fa fa-angle-left"></span>
                         </Link>
                         <div className="center">
@@ -110,7 +128,7 @@ export default class PaymentComponent extends Component{
                 <div id="ccjfooter">
                         <div className="footerleft" onClick={this.fukuan.bind(this)}>
                             <span>
-                                确认支付 <span className="yingfu">￥ 195.00</span>
+                                确认支付 <span className="yingfu">￥ {this.state.data[0] ? this.state.data[0].qty*this.state.data[0].price : 123}</span>
                             </span>
                             <span>
 

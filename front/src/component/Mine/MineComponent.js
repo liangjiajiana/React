@@ -8,18 +8,14 @@ import FooternavComponent from '../footernav/footernavComponent'
 
 export default class MineComponent extends Component{
     state = {
-        information:[]
+        information:{}
     }
     componentWillMount(){
         var data = window.localStorage.getItem('user');
         if(data){
-            data=JSON.parse(data);
-            http.get('order',{username:data.username}).then((res)=>{
-                if(res.status){
-                    this.setState({
-                        information:res.data
-                    })
-                }
+            data=JSON.parse(data)
+           this.setState({
+                information:data
             })
         }else{
             location.href='#/login';
@@ -35,16 +31,8 @@ export default class MineComponent extends Component{
                             <img src="src/component/Mine/Mine.png" />
                         </div>
                         <div>
-                            {
-                                this.state.information.map((item)=>{
-                                    return(
-                                        <div key={item.id}>
-                                        <span className="name">{item.username}</span>
-                                        <sapn className="myID">ID:{item.id}</sapn>
-                                        </div>
-                                    )
-                                })
-                            }
+                            <span className="name">{this.state.information ? this.state.information.username : 123}</span>
+                            <sapn className="myID">ID:{this.state.information ? this.state.information.id : 123}</sapn>
                         </div>
                     </div>
                     <div className="header-right">

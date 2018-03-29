@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
 
 import './littleswan.scss'
-
+import http from '../../utils/httpclient.js'
 import ModalComponent from '../ModalComponent/ModalComponent'
 export default class LittleswanComponent extends Component{
     state={
@@ -20,6 +20,23 @@ export default class LittleswanComponent extends Component{
             show:false
         }) 
     }
+    componentWillMount(){
+        var username = JSON.parse(window.localStorage.getItem('user')).username
+        http.get('useraddr',{username:username}).then((res)=>{
+            this.setState({
+                dataset:res.data
+            })
+        })
+    }
+    get(idx){
+        var obj = this.state.dataset[idx]
+        var sta=JSON.parse(window.localStorage.getItem('user'))
+        sta.adr=obj
+        var orderid=sta.orderid;
+        var str=JSON.stringify(sta);
+        window.localStorage.setItem('user',str)
+        this.props.router.push('/confirmorder/'+orderid)
+    }
     render(){
         return(
             <div id="littleswan">
@@ -35,36 +52,32 @@ export default class LittleswanComponent extends Component{
                     </li>
                 </ul>
                  <div className="main">
-                    <ul className="group">
-                        <div className="group1">
-                            <input type="checkbox" />
-                            <div>
-                                <div className="littleMessage">
-                                    <span className="name">卢本伟</span>
-                                    <span className="phone">18718361398</span>
+                     {
+                     this.state.dataset.map((item,idx)=>{
+                         return(
+                            <ul className="group" key={item.id}>
+                                <div className="group1">
+                                    <input type="checkbox" onClick={this.get.bind(this,idx)}/>
+                                    <div>
+                                        <div className="little">
+                                            <div>
+                                                <div className="littleMessage">
+                                                    <span className="name">{item.username}</span>
+                                                    <span className="phone">{item.phone}</span>
+                                                </div>
+                                                <div className="address">{item.address}  {item.adrdeta}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="address">广东省广州市越秀区</div>
-                            </div>
-                        </div>
-                        <div>
-                            <i className="icon iconfont icon-bianji"></i>
-                        </div>
-                    </ul>
-                    <ul className="group">
-                        <div className="group1">
-                            <input type="checkbox" />
-                            <div>
-                                <div className="littleMessage">
-                                    <span className="name">卢本伟</span>
-                                    <span className="phone">18718361398</span>
+                                <div>
+                                    <i className="icon iconfont icon-bianji"></i>
                                 </div>
-                                <div className="address">广东省广州市越秀区</div>
-                            </div>
-                        </div>
-                        <div>
-                            <i className="icon iconfont icon-bianji"></i>
-                        </div>
-                    </ul>
+                            </ul>
+                             
+                         )
+                     })
+                 }
                     <div className="addSite">
                         <Link to="/address">
                             <div>添加新地址</div>

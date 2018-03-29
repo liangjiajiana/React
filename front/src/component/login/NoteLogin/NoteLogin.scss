@@ -1,0 +1,72 @@
+.list-block{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    .list-item{
+        line-height:1.06rem;
+        input{
+            height:0.86rem;
+            width:7.01333rem;
+            border:1px solid #fff;
+            margin-left:0.228rem;
+            font-size:0.384rem;
+        }
+        i{
+            font-size:0.512rem;
+        }
+        .phone{
+            border-bottom:1px solid #ccc;
+        }
+        .password{
+            border-bottom:1px solid #ccc;
+        }  
+    }
+    .list-item2{
+        line-height:1.06rem;
+        display: flex;
+        justify-content:center;
+        margin-top:0.064rem;
+        input{
+            height:0.86rem;
+            border:1px solid #fff;
+            margin-left:0.228rem;
+            font-size:0.384rem;
+            border-bottom:1px solid #ccc;
+            width:3.401333rem;
+        }
+
+        i{
+            font-size:0.512rem;
+        }
+        .code{
+            text-align:center;
+            font-size:0.512rem;
+        }
+    }
+    .btn-box{
+        display:flex;
+        justify-content:center;
+        margin-top:0.543333rem;
+        .btn-block{
+            width:8.0rem;
+            height:0.938667rem;
+            background:#f90;
+            line-height:0.938667rem;
+            text-align:center;
+            color:#fff;
+            font-size:0.384rem;
+        }
+    }
+    .autologin-box{
+        display:flex;
+        justify-content:center;
+        margin-top:0.543333rem;
+        .autologin{
+            display:flex;
+            justify-content:space-between;
+            width:8.36rem;
+            font-size:0.384rem;
+        }
+    }
+}

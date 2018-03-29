@@ -1,8 +1,11 @@
 .footer{
     display:flex;
     height: 1.266667rem;
-    background: green;
+    background-color:#FFFFFF;
     justify-content: space-around;
+    a:hover{
+        color:#f90;
+    }
     a{
         display:inline-block;
         display: flex;

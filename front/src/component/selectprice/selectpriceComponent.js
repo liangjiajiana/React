@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-26 19:21:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 12:28:04
+* @Last Modified time: 2018-03-29 15:42:43
 */
 
 import React,{Component} from 'react';
@@ -29,45 +29,131 @@ export default class SelectPriceComponent extends Component{
     state = {
         dataset:[],
         price:[],
-        select:[]
+        select:[],
+        sum:0,
+        total:0,
     }
     select = (e)=>{
         if(e.target.tagName.toLowerCase()=='a'){
             e.target.parentNode.parentNode.className = 'priceselected'
-            var newselect = this.state.select;
+            var newselect = JSON.parse(JSON.stringify(this.state.select));
             
             for(var i=0;i<this.state.select.length;i++){
                 if(this.state.select[i].price==e.target.innerHTML){
-                    return
+                    return 
                 }
             }
-            newselect.push({num:1,price:e.target.innerHTML});
+            newselect.push({num:1,price:e.target.innerHTML*1});
+            
+            this.setState({select:newselect},()=>{
+                var sum=0;
+                var total=0;
+                for(var j=0;j<this.state.select.length;j++){
+                    sum+=this.state.select[j].price*this.state.select[j].num;
+                    total+=this.state.select[j].num*1;
+                }
+                this.setState({sum:sum,total:total})
+            })
             
             
             
-            
-            this.setState({select:newselect})
         }
         
     }
     remove = (item)=>{
-        var newselect = JSON.parse(JSON.stringify(this.state.select));
-        for(var i=0;i<select.length;i++){
-            if(select[i].price==e.target.innerHTML){
-            
+        for(var j=0;j<this.refs.pricetitle.children.length;j++){
+            if(this.refs.pricetitle.children[j].children[0].children[0].innerHTML==item.price){
+                this.refs.pricetitle.children[j].className = 'priceunselected'
             }
         }
-        var idx = newselect.indexOf(item);
-        newselect.splice(idx,1);
-        this.setState({select:newselect})
         
+        var newselect = JSON.parse(JSON.stringify(this.state.select));
+        for(var i=0;i<newselect.length;i++){
+            if(newselect[i].price==item.price){
+                newselect.splice(i,1);
+            }
+        }
+
+        this.setState({select:newselect},()=>{
+            var sum=0;
+            var total=0;
+            for(var j=0;j<this.state.select.length;j++){
+                sum+=this.state.select[j].price*this.state.select[j].num;
+                total+=this.state.select[j].num*1;
+            }
+            this.setState({sum:sum,total:total})
+        })
+
+        
+        
+        
+    }
+    sub = (item,e) => {
+        var newselect = JSON.parse(JSON.stringify(this.state.select));
+        for(var i=0;i<newselect.length;i++){
+            if(newselect[i].price==item.price&&newselect[i].num>0){
+                newselect[i].num--;
+                if(newselect[i].num==0){
+                    e.target.style.color='#e6e6e6';
+                }else{
+                    e.target.nextElementSibling.nextElementSibling.style.color='#666';
+                }
+            }
+        }
+        this.setState({select:newselect},()=>{
+            var sum=0;
+            var total=0;
+            for(var j=0;j<this.state.select.length;j++){
+                sum+=this.state.select[j].price*this.state.select[j].num;
+                total+=this.state.select[j].num*1;
+            }
+            this.setState({sum:sum,total:total})
+        })
+
+        
+    }
+    add = (item,e) => {
+        var newselect = JSON.parse(JSON.stringify(this.state.select));
+        for(var i=0;i<newselect.length;i++){
+            if(newselect[i].price==item.price&&newselect[i].num<4){
+                newselect[i].num++;
+                if(newselect[i].num==4){
+                    e.target.style.color='#e6e6e6';
+                }else{
+                    e.target.previousElementSibling.previousElementSibling.style.color='#666';
+                }
+            }
+        }
+        this.setState({select:newselect},()=>{
+            var sum=0;
+            var total=0;
+            for(var j=0;j<this.state.select.length;j++){
+                sum+=this.state.select[j].price*this.state.select[j].num;
+                total+=this.state.select[j].num*1;
+            }
+            this.setState({sum:sum,total:total})
+        })
+       
+        
+    }
+    houtui(){
+        window.history.back()
+    }
+    hideshow=(e)=>{
+        if(e.target.className=='iconfont icon-07jiantouxiangxia'){
+            this.refs.list.style.display= 'none';
+            e.target.className = 'iconfont icon-07jiantouxiangshang'
+        }else{
+            this.refs.list.style.display= 'block';
+            e.target.className = 'iconfont icon-07jiantouxiangxia'
+        }
     }
     render(){
         return(
             <div id='SelectPrice'>
                 <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_605774_tsrpz1kdo0f6r.css" />
                 <div className='header'>
-                    <div className='left'><a><span className='iconfont icon-fanhui'></span></a></div>
+                    <div className='left'><a onClick={this.houtui}><span className='iconfont icon-fanhui'></span></a></div>
                     <div className='center'>选择票价</div>
                     <div className='right'></div>
                 </div>
@@ -90,7 +176,7 @@ export default class SelectPriceComponent extends Component{
                     <div className='price'>
                         <p className='title'>选择票价</p>
                         
-                        <div>
+                        <div ref='pricetitle'>
                             {
                                 this.state.price.map((item)=>{
                                     return <div key={item} className='priceunselected' onClick={this.select.bind(this)}><span>￥<a>{item}</a></span></div>
@@ -99,16 +185,16 @@ export default class SelectPriceComponent extends Component{
 
                         </div>
                     </div>
-                    <div className='list'>
+                    <div className='list' ref='list'>
                         <ul>
                             {
                                 this.state.select.map((item)=>{
-                                    return <li key={item}>
-                                                <span>{item}</span>
+                                    return <li key={item.price}>
+                                                <span>{item.price}</span>
                                                 <div>
-                                                    <i className='iconfont icon-jianhao'></i>
-                                                    <span>1</span>
-                                                    <i className='iconfont icon-jiahao'></i>
+                                                    <i className='iconfont icon-jianhao' onClick={this.sub.bind(this,item)} ref='sub'></i>
+                                                    <span>{item.num}</span>
+                                                    <i className='iconfont icon-jiahao' onClick={this.add.bind(this,item)} ref='add'></i>
                                                     <span className='iconfont icon-lajitongshanchu' onClick={this.remove.bind(this,item)}></span>
                                                 </div>
                                             </li>
@@ -124,11 +210,12 @@ export default class SelectPriceComponent extends Component{
                     <div className='sure'>
                         <div className='left'>
                             <div>
-                                <span className='iconfont icon-07jiantouxiangxia'></span>
-                                <span>1</span>张
+                                <span className='iconfont icon-07jiantouxiangxia' onClick={this.hideshow.bind(this)}></span>
+                                <span>{this.state.total}</span>张
                             </div>
                             <div>
-                                ￥<span>100</span>
+                                ￥<span>{this.state.sum}</span>
+
                             </div>
                         </div>
                         <a className='right'>确定</a>

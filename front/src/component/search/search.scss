@@ -1,0 +1,64 @@
+
+#search{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+
+    .header{
+        height: 1.09rem;width: 100%;border:1px solid #EFEFEF;background-color:#FFFFFF;position:fixed;
+        ul{
+            display:flex;width: 100%;justify-content:center;
+            li:nth-child(1){height: 0.96rem;width: 0.917333rem;font-size:0.298667rem;line-height: 0.96rem;text-align:center;color:#B9B9B9;}
+            li:nth-child(2){
+                height:0.627333rem;flex:1;background-color:#F5F5F5;margin-top: 0.20667rem;border-radius:0.273333rem;padding-left: 0.704rem;position:relative;
+                i{position:absolute;left: 0.301333rem;top: 0.102rem;font-size:0.388667rem;color:#C7C7C7;}
+                input{width: 5.546667rem;height: 0.627333rem;font-size:0.328667rem;color:#C1C1C1;border:none;background-color:#F5F5F5;}
+            }
+            li:nth-child(3){height: 0.96rem;width:1.216rem;font-size:0.299333rem;color:#666666;line-height: 0.94rem;text-align:center;}
+        }
+    }
+
+    .main{
+        width: 100%;flex:1;padding-left: 0.32rem;margin-top:0.313333rem;
+        h3{height: 0.981333rem;color:#ABABAB;font-size:0.36rem;line-height: 0.981333rem;font-weight:normal;}
+        .moren{
+            display:flex;flex-wrap:wrap;height:2rem;
+            li{
+                height: 0.71rem;text-align:center;line-height: 0.64rem;background-color:#F7F7F7;color:#212121;font-size:0.311667rem;padding-left: 0.384rem;padding-right: 0.384rem;margin-right: 0.234667rem;margin-bottom: 0.254667rem;
+
+            }
+        }
+        .list{
+            margin-left: 0.332667rem;
+            ul{
+                overflow-x:auto;
+                li{
+                    height: 2.986667rem;padding-top: 0.170667rem;padding-bottom: 0.256rem;display:flex;border-bottom:1px solid #F3F3F3;
+
+                    .gto{
+                        display:flex;
+                        .img img{width: 1.898667rem;height: 2.56rem;}
+                        .det{
+                            flex:1;padding-left: 0.277333rem;padding-right: 0.448rem;
+                            h3{color:#5F5F5F;font-size:0.326rem;line-height: 0.405333rem;}
+                            div{
+                                margin-top: 0.213333rem;margin-bottom: 0.299333rem;
+                                span{font-size:0.25rem;color:#B5B5B5;}
+                                .date{font-size:0.232rem;}
+                            }
+                            p{color:#FF6600;font-size:0.32333rem;}
+                        }
+                    }
+                    
+                }       
+            }
+              
+        }
+        
+    }
+
+    .backTo{
+        width: 0.796667rem;height: 0.607333rem;border:1px solid #ccc;position:fixed;bottom:0.63333rem;right:0.260667rem;background-color:#ccc;
+    }
+
+}

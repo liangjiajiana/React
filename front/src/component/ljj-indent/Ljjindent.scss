@@ -1,0 +1,114 @@
+#Ljjindent{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    .header{
+        display:flex;
+        height:1.036667rem;
+        border-bottom:1px solid #ccc;
+        justify-content:space-between;
+        align-items:center;
+        li:nth-child(1){
+            i{
+                font-size:0.454rem;
+                padding-left:0.213333rem;   
+            }
+        }
+        li:nth-child(3){
+            i{
+                font-size:0.454rem;
+                padding-right:0.213333rem; 
+            }
+        }
+    }
+    .zhezhao{
+        height:0.32rem;
+        background:#F5F5F5;
+    }
+    .list-item{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        align-items:center;
+        .list{
+            width:8.36rem;
+            .orderTime{
+                display:flex;
+                justify-content:space-between;
+                height:0.832rem;
+                border-bottom:1px solid #ccc;
+                align-items:center;
+            }
+            .list-c{
+                display:flex;
+                justify-content:space-between;
+                line-height:0.654667rem;
+                border-bottom:1px solid #ccc;
+                .list-details{
+                    display:flex;
+                    flex-direction:column;
+                    .name{
+                        color:#000000;
+                        font-size:0.384rem;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width:5.866667rem;
+                    }
+                    .time{
+                        color:#ABABAB;
+                        font-size:0.341333rem;
+                    }
+                    .venue{
+                        color:#ABABAB;
+                        font-size:0.341333rem;
+                    }
+                    .price{
+                        color:#FF852C;
+                        font-size:0.341333rem;
+                        .qty{
+                            color:#ABABAB;
+                            padding-left:0.106667rem;
+                        }
+                    }
+                }
+                img{
+                    padding-right:0.277333rem;
+                    width:2.533333rem;
+                    height:3.133333rem;
+                }
+            }
+            .list-b{
+                display:flex;
+                height:1.588rem;
+                align-items:center;
+                justify-content:flex-end;
+                .cancellation{
+                    width:1.878667rem;
+                    height:0.725333rem;
+                    border:1px solid #ccc;
+                    text-align:center;
+                    line-height:0.725333rem;
+                    color:#fff;
+                    margin-right:0.213333rem;
+                    font-size:0.341333rem;
+                }
+                .promptly{
+                    width:1.878667rem;
+                    height:0.725333rem;
+                    border:1px solid #ccc;
+                    text-align:center;
+                    line-height:0.725333rem;
+                    color:#fff;
+                    font-size:0.341333rem;
+                    background: #f90;
+                }
+            }
+        }
+        li:nth-child(1){
+            margin-top:1.213333rem;
+        }
+    }
+}
+
+

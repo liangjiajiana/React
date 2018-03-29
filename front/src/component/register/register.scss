@@ -1,0 +1,116 @@
+#register{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    .header{
+        display:flex;
+        height:1.138667rem;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid #ccc;
+        .right{
+            height:1.138667rem;
+            width: 0.64rem;
+        }
+        i{
+            font-size:0.569333rem;
+            padding-left:0.113333rem;
+        }
+        li:nth-child(2){
+            font-size:0.484rem;
+        }
+    }
+    .main{
+        flex:1;
+        .zhezhao{
+            height:0.311333rem;
+            background:#F7F7F7;
+        }
+        .list-block{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            .list-item{
+                line-height:1.06rem;
+                input{
+                    height:0.86rem;
+                    width:7.01333rem;
+                    border:1px solid #fff;
+                    margin-left:0.228rem;
+                    font-size:0.384rem;
+                }
+                i{
+                    font-size:0.512rem;
+                }
+                .phone{
+                    border-bottom:1px solid #ccc;
+                }
+                .password{
+                    border-bottom:1px solid #ccc;
+                }
+                .password2{
+                    border-bottom:1px solid #ccc;
+                }    
+            }
+            .list-item2{
+                line-height:1.06rem;
+                display: flex;
+                justify-content:center;
+                margin-top:0.064rem;
+                input{
+                    height:0.86rem;
+                    border:1px solid #fff;
+                    margin-left:0.228rem;
+                    font-size:0.384rem;
+                    border-bottom:1px solid #ccc;
+                    width:3.401333rem;
+                }
+
+                i{
+                    font-size:0.512rem;
+                }
+                .code{
+                    text-align:center;
+                    font-size:0.512rem;
+                }
+            }
+        }
+        .btn-box{
+            display:flex;
+            justify-content:center;
+            margin-top:0.543333rem;
+            .btn-block{
+                width:8.0rem;
+                height:0.938667rem;
+                background:#f90;
+                line-height:0.938667rem;
+                text-align:center;
+                color:#fff;
+                font-size:0.384rem;
+            }
+        }
+        .select{
+            display:flex;
+            margin-top:0.313333rem;
+            color:#ccc;
+            justify-content:center;
+            .phoneText{
+                font-size:0.384rem;
+                color:#f90;
+            }
+            .passwordText{
+                font-size:0.384rem;
+                color:#f90;
+            }
+            .password2Text{
+                font-size:0.384rem;
+                color:#f90;
+            }
+            .yzm{
+                font-size:0.384rem;
+                color:#f90;
+            }
+        }
+    }
+}

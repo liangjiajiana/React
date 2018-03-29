@@ -4,6 +4,9 @@ import connect from 'react-redux'
 
 import http from '../../utils/httpclient.js'
 
+
+import {BackTop} from 'antd'
+
 import {Link} from 'react-router'
 
 import './search.scss'
@@ -25,6 +28,7 @@ export default class searchComponent extends Component{
             })
         }
     }
+   
     render(){
         return(
             <div id="search">
@@ -76,8 +80,10 @@ export default class searchComponent extends Component{
                         
                     </ul>
                 </div>
-                <div className="backTo">
-
+                <div className="toTop">
+                    <BackTop>
+                      <div className="ant-back-top-inner iconfont icon-fanhuidingbu"></div>
+                    </BackTop>
                 </div>
             </div>
         )

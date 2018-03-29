@@ -57,8 +57,17 @@
         
     }
 
-    .backTo{
-        width: 0.796667rem;height: 0.607333rem;border:1px solid #ccc;position:fixed;bottom:0.63333rem;right:0.260667rem;background-color:#ccc;
+    .toTop{
+        
+
+        width: 1.46667rem;height:1.107333rem;border:1px solid #ccc;position:fixed;bottom:1.13333rem;right:0.260667rem;background-color:#f90;color:#fff;text-align:center;line-height:1.107333rem;
+    }
+    #components-back-top-demo-custom .ant-back-top-inner {
+      bottom: 2.133333rem;
+
+    }
+    .icon-fanhuidingbu{
+        font-size:0.8rem;
     }
 
 }

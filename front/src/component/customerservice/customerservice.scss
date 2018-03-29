@@ -1,0 +1,92 @@
+body,html{height:100%};
+#customerservice{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    >.header{
+        height:1.382051rem;
+        background-color: #ff9b54;
+        color: #fff;
+        padding:0 0.320513rem;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        >.left{
+            padding-top:0.42735rem;
+            font-size:0.34188rem;
+        }
+        >.center{
+            >p{
+                display:none;
+                padding-top:0.42735rem;
+                font-size:0.42735rem;
+            }
+        }
+        >.right{
+            padding-top:0.42735rem;
+            font-size:0.470085rem;
+            >span{
+                font-size:0.470085rem;
+            }
+        }
+    }
+    >.body{
+        flex:1;
+        overflow-x:hidden;
+        >ul{
+            padding:0 0.213675rem;
+            >li{
+                margin-top:0.213675rem;
+                overflow:hidden;
+                >.user{
+                    float:right;
+                    padding:0.313675rem;
+                    border-radius:0.106838rem;
+                    background-color:orange;
+                }
+                >.jizi{
+                    float:left;
+                    padding:0.313675rem;
+                    border-radius:0.106838rem;
+                    background-color:#dadada;
+                }
+            }
+            
+        }
+    }
+    >.footer{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        padding:0 0.320513rem;
+        background-color:#dadada;
+        >.left{
+            padding-left:0.320513rem;
+            padding-top:0.313675rem;
+            >span{
+                margin-right:0.320513rem;
+                font-size:0.641026rem;
+            }
+        }
+        >.right{
+            padding-top:0.299145rem;
+                >textarea{
+                    font-size:0.512821rem;
+                    float:left;
+                    display:block;
+                    width:4.273504rem;
+                    height:0.747863rem;
+                    margin-right:0.42735rem;
+                }
+                >button{
+                    float:left;
+                    display:block;
+                    height:0.747863rem;
+                    line-height:0.747863rem;
+                    font-size:0.384615rem;
+                }
+            
+        }
+    }
+}

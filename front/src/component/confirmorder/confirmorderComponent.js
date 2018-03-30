@@ -26,11 +26,19 @@ export default class ConfirmorderCoponent extends Component{
                 obj={}
             }
             http.get('order',{id:this.props.params.id}).then((res) => {
-                console.log(res);
-                this.setState({
-                    dataset:res.data,
-                    address:obj
-                })
+                if(res.status){
+                    this.setState({
+                        dataset:res.data,
+                        address:obj
+                    })
+                    if(res.data[0].status!='tbp'){
+                        this.refs.check.style.background="#ccc"
+                    }
+                }else{
+                    alert('订单已删除')
+                    location.href="#/Ljjindent"
+                }
+                
             })
         }
 
@@ -39,20 +47,31 @@ export default class ConfirmorderCoponent extends Component{
         if(window.localStorage.getItem('user')){
             var obj=JSON.parse(window.localStorage.getItem('user'));
             obj.orderid=id
-            
             window.localStorage.setItem('user',JSON.stringify(obj));
         }
         location.href="#/littleswan"
     }
     payment(){
-        var id=this.state.dataset[0] ? this.state.dataset[0].id:12321
-        this.props.router.push('/payment/'+id)
+        
+        var obj=JSON.parse(window.localStorage.getItem('user'))
+        if(!obj.adr){
+            alert('选择收货地址!')
+        }else if(this.state.dataset[0].status=='tbp'){
+           var id=this.state.dataset[0] ? this.state.dataset[0].id:12321
+            this.props.router.push('/payment/'+id)
+        }else{
+             
+        }
+
+        
     }
     render(){
         return(
                 <div  id="ccjdingdan">
                     <div id="ccjheader"> 
-                        <span className="fanhui  fa fa-angle-left"></span>
+                        <Link to="/Ljjindent">
+                            <span className="fanhui  fa fa-angle-left"></span>
+                        </Link>
                         <div className="center">
                             确认订单
                         </div>
@@ -162,7 +181,7 @@ export default class ConfirmorderCoponent extends Component{
                             </span>
                         </div>
 
-                        <div className="footerright" onClick={this.payment.bind(this)}>
+                        <div className="footerright" onClick={this.payment.bind(this)} ref="check">
                                 确定
                         </div>
                     </div>

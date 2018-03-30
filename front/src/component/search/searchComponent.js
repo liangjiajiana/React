@@ -51,10 +51,9 @@ export default class searchComponent extends Component{
                         <ul>
                             {
                                 this.state.dataset.map((item)=>{
-                                    console.log(item);
                                     return (
                                         <li key={item.id}>
-                                            <Link to={'/performance/'+item.id} className="gto">
+                                            <Link to={'/detail/'+item.id} className="gto">
                                                 <div className='img'><img src={item.imgs} /></div>
                                                 <div className="det">
                                                     <h3>{item.title}</h3>

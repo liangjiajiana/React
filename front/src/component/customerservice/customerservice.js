@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 17:18:47
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 09:58:46
+* @Last Modified time: 2018-03-29 22:37:05
 */
 
 import React,{Component} from 'react'
@@ -21,7 +21,6 @@ export default class CustomerServiceComponent extends Component{
         var newcharrecord = this.state.chatrecord
         newcharrecord.push({id:now,name:'user',msg:this.refs.msg.value})
         this.setState({chatrecord:newcharrecord})
-        console.log(this)
         this.refs.intheinput.style.display='block'
         Send(this.refs.msg.value)
        

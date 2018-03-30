@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 12:06:17
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 19:34:31
+* @Last Modified time: 2018-03-30 12:02:40
 */
 
 import React,{Component} from 'react'
@@ -22,13 +22,12 @@ export default class MapComponent extends Component{
         this.setState({
             spinnerShow: true
         })
-        http.get('http://10.3.136.36:8080/sgoods',{id:id}).then((res) => {
+        http.get('sgoods',{id:id}).then((res) => {
             this.setState({
                 
                 dataset: res.data,
                 
             })
-            console.log(this.state.dataset[0].venue)
             // 百度地图API功能
              var map = new BMap.Map("l-map");
              map.centerAndZoom('广州', 12);
@@ -38,12 +37,7 @@ export default class MapComponent extends Component{
                  renderOptions: {map: map, panel: "r-result"}
              });
              transit.search("智汇park", this.state.dataset[0].venue);
-        })
-
-
-       
-        
-        
+        })        
     }
     showjumppage = ()=>{
         this.setState({jumppageshow:true})

@@ -71,7 +71,7 @@ body,*{ max-height: 999999px; }//加上这句话避免overflow-y使字体变大�
     }
     >.main{
         flex:1;
-        overflow-y:scroll;
+        overflow-x:hidden;
         >.msg{
             padding-bottom:0.42735rem;
             position:relative;

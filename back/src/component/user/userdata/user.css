@@ -1,0 +1,47 @@
+.t1 th{
+    padding:10px;
+    border-bottom: 2px solid #000;
+}
+.t1{
+    width:100%;
+    table-layout: fixed;
+    text-align: center;
+    height: 495px;
+    
+}
+.t1 td{
+    padding:10px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #000;
+}
+.t1 tbody tr:hover{
+    background:#FFD700;
+    color:#fff;
+    cursor:pointer;
+}
+.pagelist{
+    margin:20px;
+}
+.pagelist input[type=button]{
+    cursor: pointer;
+    margin:2px;
+    width:40px;
+    height:40px;
+    background:#4876FF;
+    color:#fff;
+    border:none;
+}
+div .pagelist .ac{
+    background:yellow;
+}
+.delg .c1{
+    background:red;
+    color:#fff;
+    margin-right:10px;
+}
+.delg .c2{
+    background:#58bc58;
+    color:#fff;
+}

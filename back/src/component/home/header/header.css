@@ -1,0 +1,9 @@
+.showuser span{
+    position:absolute;
+    right:30%;
+    top: 10px;
+}
+.showuser span a{
+    font-size: 12px;
+    margin-left:10px;
+}

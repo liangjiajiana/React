@@ -29,8 +29,13 @@ export default class searchComponent extends Component{
                     dataset:res[0],
                     show:false
                 })
-                // console.log(this.state.dataset)
                 
+                
+            })
+        }else{
+            this.setState({
+                dataset:[],
+                show:false
             })
         }
     }

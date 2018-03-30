@@ -46,7 +46,7 @@ export default class SettingsComponent extends Component{
                     <div className="nickname">
                         <div>
                             <span>昵称</span>
-                            <span>我是卢本伟</span>
+                            <span>哈哈哈</span>
                         </div>
                     </div>
                     <div className="zhezhao"></div>

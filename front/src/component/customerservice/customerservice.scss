@@ -44,6 +44,15 @@ body,html{height:100%};
                     padding:0.313675rem;
                     border-radius:0.106838rem;
                     background-color:orange;
+                    >span{
+                        >span{
+                            float:left;
+                        }
+                        >img{
+                            float:left;
+                            border-radius:50%;
+                        }
+                    }
                 }
                 >.jizi{
                     float:left;
@@ -61,6 +70,7 @@ body,html{height:100%};
         justify-content:space-between;
         padding:0 0.320513rem;
         background-color:#dadada;
+        position:relative;
         >.left{
             padding-left:0.320513rem;
             padding-top:0.313675rem;
@@ -87,6 +97,22 @@ body,html{height:100%};
                     font-size:0.384615rem;
                 }
             
+        }
+        >.expressionpackage{
+            position:absolute;
+            bottom:1.468376rem;
+            left:0.42735rem;
+            display:none;
+            >.for_tieba{
+                max-width:6.510256rem;
+                >a{
+                    float:left;
+                    border:1px solid #666;
+                    >img{
+                        width: 0.620513rem;
+                    }
+                }
+            }
         }
     }
 }

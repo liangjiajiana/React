@@ -27,9 +27,9 @@
     }
     .list-item{
         display:flex;
-        justify-content:center;
         flex-direction:column;
         align-items:center;
+        overflow-x:hidden;
         .list{
             width:8.36rem;
             .orderTime{
@@ -104,9 +104,6 @@
                     background: #f90;
                 }
             }
-        }
-        li:nth-child(1){
-            margin-top:1.213333rem;
         }
     }
 }

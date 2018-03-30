@@ -22,7 +22,7 @@ export default class LjjindentComponent extends Component{
         }) 
     }
     get(id){
-        // location.href = '/confirmorder/'+id
+        // location.href = '/confirmorder/'+id)
         this.props.router.push('/confirmorder/'+id)
 
     }
@@ -53,7 +53,24 @@ export default class LjjindentComponent extends Component{
     }
     payment(id){
         if(id){
-            this.props.router.push('/payment/'+id)
+            this.props.router.push('/confirmorder/'+id)
+        }
+    }
+    change(id){
+        if(this.refs['change'+id].innerText=='取消订单'){
+            http.get('delorder',{id}).then((res) => {
+                if(res.status){
+                    this.refs['change'+id].innerText='已取消'
+                     this.refs['change2'+id].style.display='none'
+                    this.state.dataset.forEach((res) => {
+                        if(res.id==id){
+                            res.status='yqx';
+                        }
+                   })
+                }
+            })
+        }else{
+
         }
     }
     render(){
@@ -90,9 +107,9 @@ export default class LjjindentComponent extends Component{
                                         </div>
                                     </div>
                                     <div className="list-b">
-                                        <button className="cancellation">{this.getstatus(item.status)}</button>
+                                        <button className="cancellation" onClick={this.change.bind(this,item.id)} ref={'change'+item.id}>{this.getstatus(item.status)}</button>
                                         <Link to="/payment" >
-                                            <button className="promptly" style={{display:item.status=='tbp' ? 'block' : 'none'}} onClick={this.payment.bind(this,item.id)}>立即付款</button>
+                                            <button className="promptly" ref={'change2'+item.id} style={{display:item.status=='tbp' ? 'block' : 'none'}} onClick={this.payment.bind(this,item.id)}>立即付款</button>
                                         </Link>
                                     </div>
                                 </li>

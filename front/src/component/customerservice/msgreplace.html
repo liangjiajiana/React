@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var str = 'adfa[hehe],[haha]asag[]'
+            var reg = /\[[\w]+\]/ig;
+            var arr = [];
+ 
+            arr.push(str.match(reg));
+            console.log(str.search(reg))
+            
+            var res = str.replace(reg,'@@');
+
+            res = res.split('@@');
+            
+            var alias = [
+                 "[hehe]",
+                 "[haha]",
+                 "[tushe]",
+                 "[a]",
+                 "[ku]",
+                 "[lu]",
+                 "[kaixin]",
+                 "[han]",
+                 "[lei]",
+                 "[heixian]",
+                 "[bishi]",
+                 "[bugaoxing]",
+                 "[zhenbang]",
+                 "[qian]",
+                 "[yiwen]",
+                 "[yinxian]",
+                 "[tu]",
+                 "[yi]",
+                 "[weiqu]",
+                 "[huaxin]",
+                 "[hu]",
+                 "[xiaonian]",
+                 "[neng]",
+                 "[taikaixin]",
+                 "[huaji]",
+                 "[mianqiang]",
+                 "[kuanghan]",
+                 "[guai]",
+                 "[shuijiao]",
+                 "[jinku]",
+                 "[shengqi]",
+                 "[jinya]",
+                 "[pen]",
+                 "[aixin]",
+                 "[xinsui]",
+                 "[meigui]",
+                 "[liwu]",
+                 "[caihong]",
+                 "[xxyl]",
+                 "[taiyang]",
+                 "[qianbi]",
+                 "[dnegpao]",
+                 "[chabei]",
+                 "[dangao]",
+                 "[yinyue]",
+                 "[haha2]",
+                 "[shenli]",
+                 "[damuzhi]",
+                 "[ruo]",
+                 "[OK]"
+            ]
+            
+            var result = res.map((item,idx)=>{
+                console.log(arr[0])
+                return `<li>${item} <span>${alias.indexOf(arr[0][idx])+1}</span></li>`
+            })
+            
+            // return <li key={item.id}><span className={item.name}>{res}</span></li>
+            // }
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

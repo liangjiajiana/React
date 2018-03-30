@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-26 19:21:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 15:42:43
+* @Last Modified time: 2018-03-30 15:00:32
 */
 
 import React,{Component} from 'react';
@@ -16,7 +16,7 @@ export default class SelectPriceComponent extends Component{
             spinnerShow: true
         })
         var id = this.props.params.id;
-        http.get('http://10.3.136.36:8080/sgoods',{id:id}).then((res) => {
+        http.get('sgoods',{id:id}).then((res) => {
             this.setState({
                 spinnerShow: false,
                 dataset: res.data,
@@ -32,6 +32,37 @@ export default class SelectPriceComponent extends Component{
         select:[],
         sum:0,
         total:0,
+    }
+    setorder(){
+        if(window.localStorage.getItem('user')){
+            var id=this.props.params.id*1;
+            var username=JSON.parse(window.localStorage.getItem('user')).username;
+            var price=0;
+            var qty=0;
+            var status='tbp'
+            this.state.select.forEach((res) => {
+                price=price+(res.price*res.num)
+                qty=qty+res.num*1
+            })
+            var data={
+                id,
+                username,
+                qty,
+                price,
+                status
+            }
+            
+           http.get('addorder',data).then((res) => {
+                
+                if(res.status){
+                    location.href="#/Ljjindent"
+                }
+           })
+        }else{
+            location.href="#/login"
+        }
+        
+
     }
     select = (e)=>{
         if(e.target.tagName.toLowerCase()=='a'){
@@ -148,6 +179,7 @@ export default class SelectPriceComponent extends Component{
             e.target.className = 'iconfont icon-07jiantouxiangxia'
         }
     }
+
     render(){
         return(
             <div id='SelectPrice'>
@@ -218,7 +250,7 @@ export default class SelectPriceComponent extends Component{
 
                             </div>
                         </div>
-                        <a className='right'>确定</a>
+                        <a className='right' onClick={this.setorder.bind(this)}>确定</a>
                     </div>
                 </div>
             </div>

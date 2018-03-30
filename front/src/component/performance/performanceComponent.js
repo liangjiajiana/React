@@ -23,7 +23,7 @@ export default class PerformanceComponent extends Component{
         this.setState({
             spinnerShow: true
         })
-        http.get('http://10.3.136.36:8080/goods').then((res) => {
+        http.get('goods').then((res) => {
             this.setState({
                 spinnerShow: false,
                 dataset: res.data.slice(0,this.state.rollingadd),
@@ -52,7 +52,7 @@ export default class PerformanceComponent extends Component{
             this.setState({
                 spinnerShow: true
             })
-            http.get('http://10.3.136.36:8080/sgoods',{kind:type}).then((res) => {
+            http.get('sgoods',{kind:type}).then((res) => {
                 this.setState({
                     spinnerShow: false,
                     dataset: res.data.slice(0,this.state.rollingadd),
@@ -82,7 +82,7 @@ export default class PerformanceComponent extends Component{
             this.setState({
                 spinnerShow: true
             })
-            http.get('http://10.3.136.36:8080/sgoods',{kind:type}).then((res) => {
+            http.get('sgoods',{kind:type}).then((res) => {
                 this.setState({
                     spinnerShow: false,
                     dataset: res.data.slice(0,this.state.rollingadd),
@@ -140,7 +140,7 @@ export default class PerformanceComponent extends Component{
             this.refs.loading.innerHTML = "<span class='fa fa-spin fa-spinner'></span>加载中..."
             var timer = setTimeout(()=>{
                 this.setState({rollingadd:this.state.rollingadd+4})
-                http.get('http://10.3.136.36:8080/sgoods',{kind:this.state.sorttype}).then((res) => {
+                http.get('sgoods',{kind:this.state.sorttype}).then((res) => {
                     this.setState({
                         dataset: res.data.slice(0,this.state.rollingadd),
                     })

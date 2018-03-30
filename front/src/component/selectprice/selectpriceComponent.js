@@ -3,7 +3,7 @@
 * @Date:   2018-03-26 19:21:33
 * @Last Modified by:   Marte
 <<<<<<< HEAD
-* @Last Modified time: 2018-03-30 12:24:47
+* @Last Modified time: 2018-03-30 15:07:23
 
 * @Last Modified time: 2018-03-30 12:03:18
 
@@ -23,7 +23,7 @@ export default class SelectPriceComponent extends Component{
 
         http.get('sgoods',{id:id}).then((res) => {
 
-        http.get('http://10.3.136.13:8080/sgoods',{id:id}).then((res) => {
+        
 
             this.setState({
                 spinnerShow: false,
@@ -32,6 +32,7 @@ export default class SelectPriceComponent extends Component{
             })
             this.setState({price:this.state.dataset[0].price.split('-')})
             
+        
         })
     }
     state = {

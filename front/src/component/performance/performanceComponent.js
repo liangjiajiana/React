@@ -26,49 +26,47 @@ export default class PerformanceComponent extends Component{
 
         http.get('goods').then((res) => {
 
-        http.get('http://10.3.136.13:8080/goods').then((res) => {
+            
 
             this.setState({
                 spinnerShow: false,
                 dataset: res.data.slice(0,this.state.rollingadd),
                 rowsCount: res.rowsCount
             })
-        })
-
-        if(this.props.params.id){
-            var id = this.props.params.id;
-            // var cn = ['全部','演唱会','音乐会','话剧歌剧','儿童亲子','音乐剧','舞蹈芭蕾','戏曲综艺','展览']
-            var en = [undefined,'con','mu','mo','ch','muj','balei','xiju','zl']
-            var idx = en.indexOf(id);
             
-            var type = id;
-            this.setState({sorttype:type,rollingadd:4});
-            this.refs.main.scrollTo(0,0);
+
+            if(this.props.params.id){
+                var id = this.props.params.id;
+                // var cn = ['全部','演唱会','音乐会','话剧歌剧','儿童亲子','音乐剧','舞蹈芭蕾','戏曲综艺','展览']
+                var en = [undefined,'con','mu','mo','ch','muj','balei','xiju','zl'];
+                var idx = en.indexOf(id);
+                
+                var type = id;
+                this.setState({sorttype:type,rollingadd:4});
+                this.refs.main.scrollTo(0,0);
 
 
-            for(var i=0;i<this.refs.sorttitle.children.length;i++){
-                this.refs.sorttitle.children[i].style.borderBottom = 'none'
-                this.refs.sorttitle.children[i].children[0].style.color = '#666'
-            }
-            
-            this.refs.sorttitle.children[idx].style.borderBottom = '2px solid red'
-            this.refs.sorttitle.children[idx].children[0].style.color = 'red'
-            this.setState({
-                spinnerShow: true
-            })
-
-            http.get('sgoods',{kind:type}).then((res) => {
-
-            http.get('http://10.3.136.13:8080/sgoods',{kind:type}).then((res) => {
-
+                for(var i=0;i<this.refs.sorttitle.children.length;i++){
+                    this.refs.sorttitle.children[i].style.borderBottom = 'none'
+                    this.refs.sorttitle.children[i].children[0].style.color = '#666'
+                }
+                
+                this.refs.sorttitle.children[idx].style.borderBottom = '2px solid red'
+                this.refs.sorttitle.children[idx].children[0].style.color = 'red'
                 this.setState({
-                    spinnerShow: false,
-                    dataset: res.data.slice(0,this.state.rollingadd),
-                    rowsCount: res.rowsCount
+                    spinnerShow: true
                 })
-            })
-        }
-        
+
+                http.get('sgoods',{kind:type}).then((res) => {
+                        this.setState({
+                            spinnerShow: false,
+                            dataset: res.data.slice(0,this.state.rollingadd),
+                            rowsCount: res.rowsCount
+                        })
+                })
+            
+            }
+        })
     }
     sort = (e) => {
         if(e.target.tagName.toLowerCase()=='a'){

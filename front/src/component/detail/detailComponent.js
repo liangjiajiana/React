@@ -3,7 +3,7 @@
 * @Date:   2018-03-26 14:11:18
 * @Last Modified by:   Marte
 <<<<<<< HEAD
-* @Last Modified time: 2018-03-30 12:22:28
+* @Last Modified time: 2018-03-30 15:02:01
 =======
 * @Last Modified time: 2018-03-30 10:33:29
 >>>>>>> 19b4479a68ba3b9d134a2ecac1c582fea74f30ae
@@ -29,14 +29,12 @@ export default class DetailComponent extends Component{
 
         http.get('sgoods',{id:id}).then((res) => {
 
-        http.get('http://10.3.136.13:8080/sgoods',{id:id}).then((res) => {
-
             this.setState({
                 spinnerShow: false,
                 dataset: res.data,
                 rowsCount: res.rowsCount
-            })
-            
+            })  
+
         })
     }
     hidehead = (e) => {

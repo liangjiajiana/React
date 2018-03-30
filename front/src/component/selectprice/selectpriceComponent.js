@@ -2,7 +2,15 @@
 * @Author: Marte
 * @Date:   2018-03-26 19:21:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-30 15:00:32
+<<<<<<< HEAD
+* @Last Modified time: 2018-03-30 16:56:24
+=======
+<<<<<<< HEAD
+* @Last Modified time: 2018-03-30 15:07:23
+
+* @Last Modified time: 2018-03-30 12:03:18
+
+>>>>>>> 0577546ca2fbdb47864f148f938bbbf560303984
 */
 
 import React,{Component} from 'react';
@@ -24,6 +32,7 @@ export default class SelectPriceComponent extends Component{
             })
             this.setState({price:this.state.dataset[0].price.split('-')})
             
+        
         })
     }
     state = {
@@ -34,6 +43,7 @@ export default class SelectPriceComponent extends Component{
         total:0,
     }
     setorder(){
+        console.log(this.state.select)
         if(window.localStorage.getItem('user')){
             var id=this.props.params.id*1;
             var username=JSON.parse(window.localStorage.getItem('user')).username;

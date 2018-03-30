@@ -9,6 +9,8 @@
     "start": "webpack-dev-server --devtool eval --progress --port 3002 --colors --host 10.3.136.4 --content-base  ./"
   },
   "devDependencies": {
+    "antd": "^3.3.3",
+    "antd-mobile": "^2.1.8",
     "axios": "^0.18.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -42,6 +44,7 @@
   "author": "DK.Lan",
   "license": "ISC",
   "dependencies": {
+    "antd": "^3.3.3",
     "events": "^1.1.1",
     "flux": "^3.1.2",
     "react-contenteditable": "^2.0.7"

@@ -1,9 +1,4 @@
-/* 
-* @Author: Marte
-* @Date:   2018-03-26 14:11:18
-* @Last Modified by:   Marte
-* @Last Modified time: 2018-03-30 12:02:05
-*/
+
 
 import React,{Component} from 'react';
 import http from '../../utils/httpclient.js'
@@ -22,13 +17,18 @@ export default class DetailComponent extends Component{
         this.setState({
             spinnerShow: true
         })
+
+
+
         http.get('sgoods',{id:id}).then((res) => {
+
+
             this.setState({
                 spinnerShow: false,
                 dataset: res.data,
                 rowsCount: res.rowsCount
-            })
-            
+            })  
+
         })
     }
     hidehead = (e) => {

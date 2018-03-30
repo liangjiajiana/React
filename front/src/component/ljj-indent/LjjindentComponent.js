@@ -57,6 +57,10 @@ export default class LjjindentComponent extends Component{
         }
     }
     change(id){
+
+
+        console.log(this.refs['change'+id].innerText)
+
         if(this.refs['change'+id].innerText=='取消订单'){
             http.get('delorder',{id}).then((res) => {
                 if(res.status){

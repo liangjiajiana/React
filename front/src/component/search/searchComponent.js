@@ -4,6 +4,10 @@ import connect from 'react-redux'
 
 import http from '../../utils/httpclient.js'
 
+import SpinnerComponent from '../../spinner/SpinnerComponent.js'
+
+import {BackTop} from 'antd'
+
 import {Link} from 'react-router'
 
 import './search.scss'
@@ -11,30 +15,41 @@ import './search.scss'
 export default class searchComponent extends Component{
     state = {
         dataset:[],
-        data:''
+        data:'',
+        show:false
     }
     fuzzy(){
         var data=this.refs.fu.value
+        this.setState({
+            show:true
+        })
         if(data){
             http.get('fuzzygoods',{data}).then((res)=>{
                 this.setState({
-                    dataset:res[0]
+                    dataset:res[0],
+                    show:false
                 })
                 // console.log(this.state.dataset)
+                
             })
         }
     }
+    goback(){ 
+        // 回退
+        window.history.back()
+    }
+   
     render(){
         return(
             <div id="search">
                 <div className="header">
                     <ul>
-                        <Link to="#"><li className="iconfont icon-zuojiantou"></li></Link>
+                    <li className="iconfont icon-zuojiantou" onClick={this.goback.bind(this)}></li>
                         <li>
                             <i className="iconfont icon-sousuosearch82"></i>
                             <input type="text" placeholder="演出/艺人/场馆" onInput={this.fuzzy.bind(this)} ref="fu" />
                         </li>
-                        <li >搜索</li>
+                        <li>搜索</li>
                     </ul>
                 </div>
                 <div className="main">
@@ -74,6 +89,15 @@ export default class searchComponent extends Component{
                         
                     </ul>
                 </div>
+
+
+                <div className="toTop">
+                    <BackTop>
+                      <div className="ant-back-top-inner iconfont icon-fanhuidingbu"></div>
+                    </BackTop>
+                </div>
+                <SpinnerComponent show={this.state.show} />
+
             </div>
         )
     }

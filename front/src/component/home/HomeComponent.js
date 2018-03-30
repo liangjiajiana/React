@@ -111,7 +111,9 @@ export default class HomeComponent extends Component{
 
                         </ul>
                         <div className="lookall">
-                            <p>查看全部演出<i className="iconfont icon-arrow"></i></p>
+                            <Link to={'/performance'}>
+                                <p>查看全部演出<i className="iconfont icon-arrow"></i></p>
+                            </Link>
                         </div>
                 </div>
 

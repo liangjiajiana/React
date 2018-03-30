@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-28 12:06:17
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 19:34:31
+* @Last Modified time: 2018-03-29 20:52:04
 */
 
 import React,{Component} from 'react'
@@ -32,7 +32,7 @@ export default class MapComponent extends Component{
             // 百度地图API功能
              var map = new BMap.Map("l-map");
              map.centerAndZoom('广州', 12);
-
+console.log(map);
 
              var transit = new BMap.TransitRoute(map, {
                  renderOptions: {map: map, panel: "r-result"}

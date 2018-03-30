@@ -4,6 +4,7 @@ import connect from 'react-redux'
 
 import http from '../../utils/httpclient.js'
 
+import SpinnerComponent from '../../spinner/SpinnerComponent.js'
 
 import {BackTop} from 'antd'
 
@@ -14,19 +15,29 @@ import './search.scss'
 export default class searchComponent extends Component{
     state = {
         dataset:[],
-        data:''
+        data:'',
+        show:false
     }
     fuzzy(){
         var data=this.refs.fu.value
+        this.setState({
+            show:true
+        })
         if(data){
             http.get('fuzzygoods',{data}).then((res)=>{
                 console.log(res);
                 this.setState({
-                    dataset:res[0]
+                    dataset:res[0],
+                    show:false
                 })
                 // console.log(this.state.dataset)
+                
             })
         }
+    }
+    goback(){ 
+        // 回退
+        window.history.back()
     }
    
     render(){
@@ -34,12 +45,12 @@ export default class searchComponent extends Component{
             <div id="search">
                 <div className="header">
                     <ul>
-                        <Link to="#"><li className="iconfont icon-zuojiantou"></li></Link>
+                    <li className="iconfont icon-zuojiantou" onClick={this.goback.bind(this)}></li>
                         <li>
                             <i className="iconfont icon-sousuosearch82"></i>
                             <input type="text" placeholder="演出/艺人/场馆" onInput={this.fuzzy.bind(this)} ref="fu" />
                         </li>
-                        <li >搜索</li>
+                        <li>搜索</li>
                     </ul>
                 </div>
                 <div className="main">
@@ -59,7 +70,7 @@ export default class searchComponent extends Component{
                                     console.log(item);
                                     return (
                                         <li key={item.id}>
-                                            <Link to={'/performance/'+item.id} className="gto">
+                                            <Link to={'/detail/'+item.id} className="gto">
                                                 <div className='img'><img src={item.imgs} /></div>
                                                 <div className="det">
                                                     <h3>{item.title}</h3>
@@ -85,6 +96,7 @@ export default class searchComponent extends Component{
                       <div className="ant-back-top-inner iconfont icon-fanhuidingbu"></div>
                     </BackTop>
                 </div>
+                <SpinnerComponent show={this.state.show} />
             </div>
         )
     }

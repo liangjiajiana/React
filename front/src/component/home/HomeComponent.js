@@ -10,27 +10,27 @@ import {Link} from 'react-router'
 
 import CarouselComponent from '../carousel/carouselComponent.js'
 
-import SpinnerComponent from '../../spinner/SpinnerComponent.js'
-
-
 import './home.scss'
+
+import SpinnerComponent from '../../spinner/SpinnerComponent.js'
 
 import FooternavComponent from '../footernav/footernavComponent'
 
 export default class HomeComponent extends Component{
     state = { //定义一个变量接收数据
         data:'',
-        dataset: []
+        dataset: [],
+        show:false
     }
     componentWillMount(){
+        this.setState({
+            show:true
+        }),
         http.get('sgoods',{top:'hot'}).then((res)=>{
             this.setState({   //在这里改变dataset的值
-                dataset:res.data
+                dataset:res.data,
+                show:false
             })
-
-            
-
-
         })
     }
     componentDidMount(){
@@ -111,11 +111,15 @@ export default class HomeComponent extends Component{
 
                         </ul>
                         <div className="lookall">
-                            <p>查看全部演出<i className="iconfont icon-arrow"></i></p>
+                            <Link to={'/performance'}>
+                                <p>查看全部演出<i className="iconfont icon-arrow"></i></p>
+                            </Link>
                         </div>
                 </div>
+
                 <FooternavComponent/>
-                <SpinnerComponent/>
+
+                <SpinnerComponent show={this.state.show}/>
             </div>
         )
     }

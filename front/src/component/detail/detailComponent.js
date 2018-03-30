@@ -2,7 +2,11 @@
 * @Author: Marte
 * @Date:   2018-03-26 14:11:18
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-30 12:02:05
+<<<<<<< HEAD
+* @Last Modified time: 2018-03-30 12:22:28
+=======
+* @Last Modified time: 2018-03-30 10:33:29
+>>>>>>> 19b4479a68ba3b9d134a2ecac1c582fea74f30ae
 */
 
 import React,{Component} from 'react';
@@ -22,7 +26,11 @@ export default class DetailComponent extends Component{
         this.setState({
             spinnerShow: true
         })
+
         http.get('sgoods',{id:id}).then((res) => {
+
+        http.get('http://10.3.136.13:8080/sgoods',{id:id}).then((res) => {
+
             this.setState({
                 spinnerShow: false,
                 dataset: res.data,

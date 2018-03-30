@@ -23,7 +23,11 @@ export default class PerformanceComponent extends Component{
         this.setState({
             spinnerShow: true
         })
+
         http.get('goods').then((res) => {
+
+        http.get('http://10.3.136.13:8080/goods').then((res) => {
+
             this.setState({
                 spinnerShow: false,
                 dataset: res.data.slice(0,this.state.rollingadd),
@@ -52,7 +56,11 @@ export default class PerformanceComponent extends Component{
             this.setState({
                 spinnerShow: true
             })
+
             http.get('sgoods',{kind:type}).then((res) => {
+
+            http.get('http://10.3.136.13:8080/sgoods',{kind:type}).then((res) => {
+
                 this.setState({
                     spinnerShow: false,
                     dataset: res.data.slice(0,this.state.rollingadd),

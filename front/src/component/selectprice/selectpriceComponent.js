@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-03-26 19:21:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-03-29 21:04:58
+* @Last Modified time: 2018-03-30 12:03:18
 */
 
 import React,{Component} from 'react';
@@ -16,7 +16,7 @@ export default class SelectPriceComponent extends Component{
             spinnerShow: true
         })
         var id = this.props.params.id;
-        http.get('http://10.3.136.36:8080/sgoods',{id:id}).then((res) => {
+        http.get('http://10.3.136.13:8080/sgoods',{id:id}).then((res) => {
             this.setState({
                 spinnerShow: false,
                 dataset: res.data,

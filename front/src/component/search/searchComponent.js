@@ -32,11 +32,7 @@ export default class searchComponent extends Component{
                 
                 
             })
-        }else{
-            this.setState({
-                dataset:[],
-                show:false
-            })
+        }else{                                                                                                 
         }
     }
     goback(){ 
